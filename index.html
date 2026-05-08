@@ -295,22 +295,23 @@
     gap: 8px;
   }
 
-  /* Hero use-case flow */
+  /* Hero connected-tools visual */
   .hero-flow {
     position: relative;
-    min-height: 560px;
+    min-height: 500px;
     display: grid;
     place-items: center;
   }
   .flow-card {
     position: relative;
     width: min(100%, 480px);
-    min-height: 540px;
+    min-height: 480px;
     border: 1px solid rgba(212, 210, 201, 0.9);
     border-radius: 32px;
     background:
-      radial-gradient(circle at 30% 20%, rgba(79, 70, 229, 0.16), transparent 34%),
-      radial-gradient(circle at 88% 76%, rgba(234, 88, 12, 0.16), transparent 36%),
+      radial-gradient(circle at 50% 46%, rgba(79, 70, 229, 0.14), transparent 34%),
+      radial-gradient(circle at 12% 18%, rgba(234, 88, 12, 0.10), transparent 34%),
+      radial-gradient(circle at 88% 82%, rgba(79, 70, 229, 0.10), transparent 34%),
       linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(245, 244, 237, 0.76));
     box-shadow: var(--shadow-lg);
     overflow: hidden;
@@ -331,10 +332,10 @@
   .flow-card::after {
     content: '';
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: 190px;
+    height: 190px;
     left: 50%;
-    top: 50%;
+    top: 47%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background: rgba(79, 70, 229, 0.12);
@@ -351,17 +352,15 @@
   .flow-lines path {
     fill: none;
     stroke-linecap: round;
-    stroke-width: 2;
-    stroke-dasharray: 8 12;
-    animation: flowDash 16s linear infinite;
+    stroke-width: 1.75;
+    stroke-dasharray: 6 14;
+    animation: flowDash 18s linear infinite;
   }
-  .flow-lines .line-primary { stroke: rgba(79, 70, 229, 0.42); }
-  .flow-lines .line-warn { stroke: rgba(234, 88, 12, 0.42); animation-duration: 13s; }
-  .flow-lines .line-soft { stroke: rgba(21, 20, 14, 0.20); animation-duration: 19s; }
+  .flow-lines .line-primary { stroke: rgba(79, 70, 229, 0.34); }
+  .flow-lines .line-warn { stroke: rgba(234, 88, 12, 0.34); animation-duration: 15s; }
+  .flow-lines .line-soft { stroke: rgba(21, 20, 14, 0.18); animation-duration: 22s; }
   .flow-core,
-  .flow-node,
-  .flow-usecase,
-  .flow-phase {
+  .flow-tool {
     position: absolute;
     background: rgba(255, 255, 255, 0.84);
     border: 1px solid rgba(212, 210, 201, 0.92);
@@ -371,10 +370,10 @@
   }
   .flow-core {
     left: 50%;
-    top: 49%;
+    top: 47%;
     transform: translate(-50%, -50%);
-    width: 164px;
-    height: 164px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -382,10 +381,26 @@
     padding: 22px;
     border-color: rgba(79, 70, 229, 0.35);
   }
+  .flow-logo-mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    background: var(--ink);
+    transform: rotate(45deg);
+    margin: 0 auto 14px;
+    position: relative;
+  }
+  .flow-logo-mark::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    background: var(--warn);
+    border-radius: 2px;
+  }
   .flow-core strong {
     display: block;
     font-family: var(--serif);
-    font-size: 24px;
+    font-size: 26px;
     line-height: 1.05;
     letter-spacing: -0.02em;
     font-weight: 500;
@@ -400,104 +415,64 @@
     letter-spacing: 0.08em;
     font-weight: 700;
   }
-  .flow-node {
+  .flow-tool {
+    width: 128px;
+    min-height: 48px;
     border-radius: 999px;
     padding: 9px 13px;
-    font-size: 12px;
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
     color: var(--ink);
-    animation: floatNode 7s ease-in-out infinite;
-  }
-  .flow-node span {
-    display: block;
-    font-size: 10px;
-    color: var(--ink-muted);
-    font-weight: 500;
-    letter-spacing: 0;
-  }
-  .flow-node--crm { left: 32px; top: 36px; }
-  .flow-node--tools { right: 28px; top: 70px; animation-delay: -1.6s; }
-  .flow-node--partners { right: 34px; bottom: 58px; animation-delay: -3.4s; }
-  .flow-node--team { left: 28px; bottom: 80px; animation-delay: -5.1s; }
-  .flow-usecase {
-    width: 154px;
-    border-radius: 18px;
-    padding: 12px 13px;
-    color: var(--ink);
-    animation: floatNode 8s ease-in-out infinite;
-  }
-  .flow-usecase small {
-    display: block;
-    font-family: var(--serif);
-    font-size: 11px;
-    color: var(--ink-faint);
-    font-style: italic;
-    margin-bottom: 3px;
-  }
-  .flow-usecase span {
-    display: block;
     font-size: 13px;
     font-weight: 700;
-    line-height: 1.25;
+    animation: floatNode 8s ease-in-out infinite;
   }
-  .flow-usecase strong {
-    display: inline-flex;
-    margin-top: 9px;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 11px;
-    font-weight: 800;
+  .flow-tool img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
-  .flow-usecase--deal { left: 34px; top: 158px; }
-  .flow-usecase--support { right: 26px; top: 184px; animation-delay: -2s; }
-  .flow-usecase--qbr { left: 52px; bottom: 164px; animation-delay: -4s; }
-  .flow-usecase--commission { right: 48px; bottom: 154px; animation-delay: -6s; }
-  .flow-phase-rail {
+  .flow-tool span {
+    display: block;
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+  .flow-tool--sf { left: 34px; top: 86px; }
+  .flow-tool--hubspot { left: 70px; top: 204px; animation-delay: -2s; }
+  .flow-tool--slack-vendor { left: 34px; bottom: 92px; animation-delay: -4s; }
+  .flow-tool--teams { right: 34px; top: 86px; animation-delay: -1s; }
+  .flow-tool--gmail { right: 70px; top: 204px; animation-delay: -3s; }
+  .flow-tool--slack-partner { right: 34px; bottom: 92px; animation-delay: -5s; }
+  .flow-side-label {
     position: absolute;
-    left: 50%;
-    bottom: 22px;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 6px;
-    padding: 7px;
+    top: 24px;
+    padding: 6px 11px;
     border-radius: 999px;
     background: rgba(21, 20, 14, 0.78);
-    box-shadow: var(--shadow);
-  }
-  .flow-phase {
-    position: relative;
-    border: none;
-    box-shadow: none;
-    border-radius: 999px;
-    padding: 6px 9px;
-    background: rgba(250, 249, 245, 0.10);
-    color: rgba(250, 249, 245, 0.82);
+    color: rgba(250, 249, 245, 0.88);
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .flow-phase:nth-child(4) {
-    background: var(--warn);
-    color: white;
-  }
-  .flow-caption {
-    position: absolute;
-    left: 28px;
-    right: 28px;
-    top: 20px;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    color: var(--ink-muted);
-    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
-  .flow-caption span:last-child { color: var(--warn); }
+  .flow-side-label--vendor { left: 26px; }
+  .flow-side-label--partner { right: 26px; }
+  .flow-bottom-note {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%);
+    width: calc(100% - 56px);
+    text-align: center;
+    color: var(--ink-muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .flow-bottom-note strong { color: var(--ink); font-weight: 700; }
   @keyframes flowDash {
     to { stroke-dashoffset: -160; }
   }
@@ -507,15 +482,14 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .flow-lines path,
-    .flow-node,
-    .flow-usecase {
+    .flow-tool {
       animation: none;
     }
   }
   @media (max-width: 1040px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero-flow {
-      min-height: 520px;
+      min-height: 500px;
       max-width: 560px;
       margin: 0 auto;
       width: 100%;
@@ -523,17 +497,19 @@
   }
   @media (max-width: 560px) {
     .hero { padding: 56px 18px 72px; }
-    .flow-card { min-height: 580px; }
-    .flow-usecase { width: 140px; padding: 10px 11px; }
-    .flow-usecase--deal { left: 18px; }
-    .flow-usecase--support { right: 16px; }
-    .flow-usecase--qbr { left: 22px; }
-    .flow-usecase--commission { right: 22px; }
-    .flow-node--crm { left: 18px; }
-    .flow-node--tools { right: 18px; }
-    .flow-node--partners { right: 20px; bottom: 72px; }
-    .flow-node--team { left: 20px; bottom: 96px; }
-    .flow-phase-rail { flex-wrap: wrap; justify-content: center; width: calc(100% - 40px); border-radius: 20px; }
+    .flow-card { min-height: 560px; }
+    .flow-core { width: 132px; height: 132px; }
+    .flow-core strong { font-size: 23px; }
+    .flow-tool { width: 112px; padding: 8px 10px; font-size: 12px; }
+    .flow-tool--sf { left: 16px; top: 94px; }
+    .flow-tool--hubspot { left: 30px; top: 220px; }
+    .flow-tool--slack-vendor { left: 16px; bottom: 126px; }
+    .flow-tool--teams { right: 16px; top: 94px; }
+    .flow-tool--gmail { right: 30px; top: 220px; }
+    .flow-tool--slack-partner { right: 16px; bottom: 126px; }
+    .flow-side-label--vendor { left: 16px; }
+    .flow-side-label--partner { right: 16px; }
+    .flow-bottom-note { bottom: 24px; width: calc(100% - 36px); }
   }
 
   /* ============================================================
@@ -1322,72 +1298,54 @@
       </div>
     </div>
 
-    <aside class="hero-flow" aria-label="Use cases flowing through headless partner management">
+    <aside class="hero-flow" aria-label="Vendor and partner tools connected through Introw">
       <div class="flow-card">
-        <div class="flow-caption">
-          <span>14 use cases</span>
-          <span>Right info, right time</span>
-        </div>
+        <div class="flow-side-label flow-side-label--vendor">Vendor side</div>
+        <div class="flow-side-label flow-side-label--partner">Partner side</div>
 
         <svg class="flow-lines" viewBox="0 0 420 500" aria-hidden="true">
-          <path class="line-primary" d="M44 52 C150 30 194 126 210 214 C228 314 308 344 376 438" />
-          <path class="line-warn" d="M376 88 C266 100 250 162 218 234 C174 334 114 346 48 420" />
-          <path class="line-soft" d="M42 250 C126 178 296 178 378 250 C294 326 126 326 42 250" />
-          <path class="line-primary" d="M210 72 C286 138 286 360 210 430 C132 360 132 138 210 72" />
+          <path class="line-primary" d="M48 86 C116 118 150 174 210 222 C270 174 304 118 372 86" />
+          <path class="line-warn" d="M84 206 C138 214 160 232 210 222 C260 232 282 214 336 206" />
+          <path class="line-primary" d="M48 362 C116 318 156 270 210 222 C264 270 304 318 372 362" />
+          <path class="line-soft" d="M210 86 C184 144 184 302 210 362 C236 302 236 144 210 86" />
         </svg>
 
-        <div class="flow-node flow-node--crm">
-          CRM
-          <span>source of truth</span>
+        <div class="flow-tool flow-tool--sf">
+          <img src="https://cdn.simpleicons.org/salesforce" alt="" loading="lazy">
+          <div>Salesforce<span>vendor CRM</span></div>
         </div>
-        <div class="flow-node flow-node--tools">
-          Slack + Teams
-          <span>daily workflow</span>
+        <div class="flow-tool flow-tool--hubspot">
+          <img src="https://cdn.simpleicons.org/hubspot" alt="" loading="lazy">
+          <div>HubSpot<span>vendor CRM</span></div>
         </div>
-        <div class="flow-node flow-node--partners">
-          Partners
-          <span>no portal tax</span>
-        </div>
-        <div class="flow-node flow-node--team">
-          Partner team
-          <span>judgment loop</span>
+        <div class="flow-tool flow-tool--slack-vendor">
+          <img src="https://cdn.simpleicons.org/slack" alt="" loading="lazy">
+          <div>Slack<span>internal team</span></div>
         </div>
 
-        <div class="flow-usecase flow-usecase--deal">
-          <small>Use case 08</small>
-          <span>Conversational deal reg</span>
-          <strong>90 sec</strong>
+        <div class="flow-tool flow-tool--teams">
+          <img src="https://cdn.simpleicons.org/microsoftteams" alt="" loading="lazy">
+          <div>Teams<span>partner team</span></div>
         </div>
-        <div class="flow-usecase flow-usecase--support">
-          <small>Use case 06</small>
-          <span>Enablement answers</span>
-          <strong>24/7</strong>
+        <div class="flow-tool flow-tool--gmail">
+          <img src="https://cdn.simpleicons.org/gmail" alt="" loading="lazy">
+          <div>Gmail<span>partner inbox</span></div>
         </div>
-        <div class="flow-usecase flow-usecase--qbr">
-          <small>Use case 12</small>
-          <span>QBR and meeting prep</span>
-          <strong>500h back</strong>
-        </div>
-        <div class="flow-usecase flow-usecase--commission">
-          <small>Use case 13</small>
-          <span>Commission status</span>
-          <strong>instant</strong>
+        <div class="flow-tool flow-tool--slack-partner">
+          <img src="https://cdn.simpleicons.org/slack" alt="" loading="lazy">
+          <div>Slack<span>shared channel</span></div>
         </div>
 
         <div class="flow-core">
           <div>
-            <strong>Headless PRM</strong>
-            <span>CRM-connected use-case engine</span>
+            <div class="flow-logo-mark"></div>
+            <strong>introw.io</strong>
+            <span>headless partner layer</span>
           </div>
         </div>
 
-        <div class="flow-phase-rail" aria-hidden="true">
-          <span class="flow-phase">Acquire</span>
-          <span class="flow-phase">Activate</span>
-          <span class="flow-phase">Enable</span>
-          <span class="flow-phase">Transact</span>
-          <span class="flow-phase">Coach</span>
-          <span class="flow-phase">Measure</span>
+        <div class="flow-bottom-note">
+          <strong>One connected layer</strong> surfacing partner context in the tools both sides already use.
         </div>
       </div>
     </aside>
@@ -1702,7 +1660,7 @@
 <section id="stakeholders" class="stakeholders-bg">
   <div style="max-width: 1280px; margin: 0 auto;">
     <div class="block-eyebrow">Who wins</div>
-    <h2 class="block-title">Every role in the channel program <em>recovers</em> something.</h2>
+    <h2 class="block-title">Every role in the channel program <em>wins</em>.</h2>
     <p class="block-lead">Agentic PRM doesn't replace people. It moves their work upstream — to the strategic, judgment-required portion of every role that the program was supposed to be doing all along.</p>
 
     <div class="stakeholders-grid">
