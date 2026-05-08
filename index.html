@@ -94,18 +94,12 @@
     text-decoration: none;
     color: var(--ink);
   }
-  .brand-dot {
-    width: 12px; height: 12px;
-    border-radius: 3px;
-    background: var(--ink);
-    transform: rotate(45deg);
-    position: relative;
-  }
-  .brand-dot::after {
-    content: '';
-    position: absolute; inset: 3px;
-    background: var(--warn);
-    border-radius: 1px;
+  .brand-logo {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
   nav.primary-nav {
     display: flex;
@@ -414,21 +408,12 @@
     gap: 10px;
     justify-content: center;
   }
-  .flow-logo-mark {
-    width: 24px;
-    height: 24px;
-    border-radius: 7px;
-    background: var(--ink);
-    transform: rotate(45deg);
-    position: relative;
+  .flow-logo-img {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    object-fit: contain;
     flex-shrink: 0;
-  }
-  .flow-logo-mark::after {
-    content: '';
-    position: absolute;
-    inset: 6px;
-    background: var(--warn);
-    border-radius: 2px;
   }
   .flow-core strong {
     display: block;
@@ -1456,7 +1441,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="#" class="brand">
-      <span class="brand-dot"></span>
+      <img class="brand-logo" src="https://assets.introw.io/introw-logo-square.png" alt="Introw" loading="eager">
       Introw
     </a>
     <nav class="primary-nav">
@@ -1559,8 +1544,7 @@
           <div>
             <div class="flow-core-kicker">Headless PRM</div>
             <div class="flow-logo-row">
-              <div class="flow-logo-mark"></div>
-              <strong>introw.io</strong>
+              <img class="flow-logo-img" src="https://assets.introw.io/introw-logo-square.png" alt="Introw" loading="lazy">
             </div>
             <span>The partner layer between your team, partner teams, and the systems both sides already use.</span>
           </div>
@@ -1805,21 +1789,17 @@
 
       <!-- Center Introw orchestration layer -->
       <rect x="594" y="282" width="212" height="244" rx="30" class="mw-core" />
-      <g transform="translate(684 318) rotate(45)">
-        <rect x="0" y="0" width="34" height="34" rx="8" fill="#15140e" />
-        <rect x="10" y="10" width="14" height="14" rx="3" fill="#ea580c" />
-      </g>
-      <text x="700" y="385" text-anchor="middle" class="mw-core-title">Introw</text>
-      <text x="700" y="412" text-anchor="middle" class="mw-core-sub">Headless PRM</text>
+      <image href="https://assets.introw.io/introw-logo-square.png" x="676" y="314" width="48" height="48" />
+      <text x="700" y="390" text-anchor="middle" class="mw-core-title">Introw</text>
 
-      <rect x="626" y="438" width="148" height="24" rx="12" class="mw-chip" />
-      <text x="700" y="454" text-anchor="middle" class="mw-chip-text">Agent orchestration</text>
+      <rect x="626" y="406" width="148" height="24" rx="12" class="mw-chip" />
+      <text x="700" y="422" text-anchor="middle" class="mw-chip-text">Agent orchestration</text>
 
-      <rect x="626" y="472" width="148" height="24" rx="12" fill="rgba(79, 70, 229, 0.12)" stroke="rgba(79, 70, 229, 0.22)" />
-      <text x="700" y="488" text-anchor="middle" class="mw-label">CRM writeback</text>
+      <rect x="626" y="440" width="148" height="24" rx="12" fill="rgba(79, 70, 229, 0.12)" stroke="rgba(79, 70, 229, 0.22)" />
+      <text x="700" y="456" text-anchor="middle" class="mw-label">CRM sync</text>
 
-      <rect x="626" y="506" width="148" height="24" rx="12" fill="rgba(234, 88, 12, 0.12)" stroke="rgba(234, 88, 12, 0.24)" />
-      <text x="700" y="522" text-anchor="middle" class="mw-label">Human-in-loop</text>
+      <rect x="626" y="474" width="148" height="24" rx="12" fill="rgba(234, 88, 12, 0.12)" stroke="rgba(234, 88, 12, 0.24)" />
+      <text x="700" y="490" text-anchor="middle" class="mw-label">Human-in-loop</text>
 
       <text x="226" y="704" text-anchor="middle" class="mw-small">Vendor-owned data, routing rules, approvals, segmentation, and program intelligence</text>
       <text x="700" y="704" text-anchor="middle" class="mw-small">Identity, permissions, audit trail, agent actions, and CRM system-of-record writeback</text>
@@ -2310,7 +2290,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <a href="#" class="footer-brand">
-      <span class="brand-dot"></span>
+      <img class="brand-logo" src="https://assets.introw.io/introw-logo-square.png" alt="Introw" loading="lazy">
       Introw
     </a>
     <div class="footer-meta">
