@@ -292,14 +292,14 @@
   /* Hero command surface visual */
   .hero-flow {
     position: relative;
-    min-height: 540px;
+    min-height: 590px;
     display: grid;
     place-items: center;
   }
   .flow-card {
     position: relative;
     width: min(100%, 540px);
-    min-height: 520px;
+    min-height: 570px;
     border: 1px solid rgba(212, 210, 201, 0.72);
     border-radius: 38px;
     background:
@@ -345,7 +345,7 @@
   }
   .flow-thread--one { width: 310px; left: 115px; top: 194px; transform: rotate(10deg); }
   .flow-thread--two { width: 330px; left: 104px; top: 304px; transform: rotate(-12deg); }
-  .flow-thread--three { width: 250px; left: 146px; top: 402px; transform: rotate(5deg); opacity: 0.65; }
+  .flow-thread--three { width: 250px; left: 146px; top: 426px; transform: rotate(5deg); opacity: 0.65; }
   .flow-core,
   .flow-tool,
   .flow-surface,
@@ -356,7 +356,7 @@
   }
   .flow-core {
     left: 50%;
-    top: 42%;
+    top: 39%;
     transform: translate(-50%, -50%);
     width: 226px;
     min-height: 166px;
@@ -437,10 +437,10 @@
   }
   .flow-tool--sf { left: 72px; top: 116px; }
   .flow-tool--hubspot { left: 36px; top: 246px; animation-delay: -2s; }
-  .flow-tool--slack-vendor { left: 124px; bottom: 106px; animation-delay: -4s; }
+  .flow-tool--slack-vendor { left: 124px; top: 306px; animation-delay: -4s; }
   .flow-tool--teams { right: 72px; top: 116px; animation-delay: -1s; }
   .flow-tool--gmail { right: 36px; top: 246px; animation-delay: -3s; }
-  .flow-tool--slack-partner { right: 124px; bottom: 106px; animation-delay: -5s; }
+  .flow-tool--slack-partner { right: 124px; top: 306px; animation-delay: -5s; }
   .flow-pill {
     top: 24px;
     padding: 7px 11px;
@@ -465,11 +465,11 @@
     box-shadow: 0 16px 36px rgba(20, 18, 10, 0.10), 0 1px 2px rgba(20, 18, 10, 0.04);
     z-index: 5;
   }
-  .flow-surface--left { left: 36px; top: 342px; }
-  .flow-surface--right { right: 32px; top: 332px; }
+  .flow-surface--left { left: 36px; top: 384px; }
+  .flow-surface--right { right: 32px; top: 374px; }
   .flow-surface--bottom {
     left: 50%;
-    bottom: 24px;
+    bottom: 22px;
     transform: translateX(-50%);
     width: 270px;
   }
@@ -517,7 +517,7 @@
   @media (max-width: 1040px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero-flow {
-      min-height: 540px;
+      min-height: 590px;
       max-width: 580px;
       margin: 0 auto;
       width: 100%;
@@ -525,21 +525,21 @@
   }
   @media (max-width: 560px) {
     .hero { padding: 56px 18px 72px; }
-    .flow-card { min-height: 620px; }
-    .flow-core { top: 37%; width: 210px; }
+    .flow-card { min-height: 660px; }
+    .flow-core { top: 34%; width: 210px; }
     .flow-tool { width: 50px; height: 50px; border-radius: 16px; }
     .flow-tool--sf { left: 32px; top: 112px; }
     .flow-tool--hubspot { left: 20px; top: 240px; }
-    .flow-tool--slack-vendor { left: 70px; bottom: 156px; }
+    .flow-tool--slack-vendor { left: 70px; top: 306px; }
     .flow-tool--teams { right: 32px; top: 112px; }
     .flow-tool--gmail { right: 20px; top: 240px; }
-    .flow-tool--slack-partner { right: 70px; bottom: 156px; }
+    .flow-tool--slack-partner { right: 70px; top: 306px; }
     .flow-tool::after { display: none; }
     .flow-pill--vendor { left: 18px; }
     .flow-pill--partner { right: 18px; }
     .flow-surface { width: 150px; padding: 12px; }
-    .flow-surface--left { left: 18px; top: 384px; }
-    .flow-surface--right { right: 18px; top: 384px; }
+    .flow-surface--left { left: 18px; top: 424px; }
+    .flow-surface--right { right: 18px; top: 424px; }
     .flow-surface--bottom { width: calc(100% - 36px); bottom: 20px; }
   }
 
