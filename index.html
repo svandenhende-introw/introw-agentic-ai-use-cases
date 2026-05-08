@@ -1269,27 +1269,182 @@
   .reveal:nth-child(3) { transition-delay: 0.12s; }
   .reveal:nth-child(4) { transition-delay: 0.18s; }
 
-  /* Master visual section */
-  .master-visual-block { padding-bottom: 60px; }
+  /* Master workflow orchestration visual */
+  .master-visual-block {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
   .master-visual-canvas {
     width: 100%;
-    background: var(--surface);
+    background:
+      radial-gradient(circle at 50% 46%, rgba(79, 70, 229, 0.12), transparent 34%),
+      radial-gradient(circle at 12% 24%, rgba(234, 88, 12, 0.10), transparent 28%),
+      radial-gradient(circle at 88% 70%, rgba(79, 70, 229, 0.08), transparent 30%),
+      var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    padding: 16px;
-    box-shadow: var(--shadow-md);
+    padding: 18px;
+    box-shadow: var(--shadow-lg);
     overflow-x: auto;
   }
   .master-visual-canvas svg {
     width: 100%;
+    min-width: 1180px;
     height: auto;
     display: block;
-    min-width: 1200px;
   }
-  .master-visual-cta {
-    text-align: center;
-    margin-top: 24px;
+  .mw-bg-grid {
+    opacity: 0.5;
   }
+  .mw-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    fill: var(--ink);
+  }
+  .mw-subtitle,
+  .mw-small,
+  .mw-label {
+    font-family: var(--sans);
+  }
+  .mw-subtitle {
+    font-size: 14px;
+    fill: var(--ink-muted);
+  }
+  .mw-side-title {
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 500;
+    fill: var(--ink);
+  }
+  .mw-kicker {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    fill: var(--warn);
+  }
+  .mw-small {
+    font-size: 11px;
+    fill: var(--ink-muted);
+  }
+  .mw-label {
+    font-size: 12px;
+    font-weight: 700;
+    fill: var(--ink);
+  }
+  .mw-node-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    fill: var(--ink);
+  }
+  .mw-node-num {
+    font-family: var(--serif);
+    font-size: 10px;
+    font-style: italic;
+    fill: var(--ink-faint);
+  }
+  .mw-panel,
+  .mw-node,
+  .mw-tool,
+  .mw-core {
+    filter: drop-shadow(0 10px 18px rgba(20, 18, 10, 0.08));
+  }
+  .mw-panel {
+    fill: rgba(255, 255, 255, 0.68);
+    stroke: rgba(212, 210, 201, 0.88);
+  }
+  .mw-node {
+    fill: rgba(255, 255, 255, 0.86);
+    stroke: rgba(212, 210, 201, 0.96);
+  }
+  .mw-node--vendor {
+    stroke: rgba(234, 88, 12, 0.34);
+  }
+  .mw-node--partner {
+    stroke: rgba(79, 70, 229, 0.34);
+  }
+  .mw-tool {
+    fill: rgba(255, 255, 255, 0.9);
+    stroke: rgba(212, 210, 201, 0.92);
+  }
+  .mw-core {
+    fill: rgba(255, 255, 255, 0.94);
+    stroke: rgba(79, 70, 229, 0.35);
+    stroke-width: 1.4;
+  }
+  .mw-core-title {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    fill: var(--ink);
+  }
+  .mw-core-sub {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    fill: var(--ink-muted);
+  }
+  .mw-line {
+    fill: none;
+    stroke: rgba(21, 20, 14, 0.26);
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+  .mw-line--vendor {
+    stroke: rgba(234, 88, 12, 0.42);
+  }
+  .mw-line--partner {
+    stroke: rgba(79, 70, 229, 0.42);
+  }
+  .mw-line--dash {
+    stroke-dasharray: 6 10;
+  }
+  .mw-chip {
+    fill: rgba(21, 20, 14, 0.82);
+  }
+  .mw-chip-text {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    fill: var(--bg);
+  }
+  .master-visual-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .master-visual-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .master-visual-legend i {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    display: inline-block;
+  }
+  .master-visual-legend .vendor-dot { background: var(--warn); }
+  .master-visual-legend .partner-dot { background: var(--accent); }
+  .master-visual-legend .introw-dot { background: var(--ink); }
 
 </style>
 </head>
@@ -1306,6 +1461,7 @@
     </a>
     <nav class="primary-nav">
       <a href="#shift">The shift</a>
+      <a href="#master-visual">Workflow map</a>
       <a href="#use-cases">Use cases</a>
       <a href="#stakeholders">Who wins</a>
       <a href="#integrations">Connected systems</a>
@@ -1479,6 +1635,202 @@
         <li>Real-time conflict detection at the moment of submission</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MASTER WORKFLOW ORCHESTRATION VISUAL
+     ============================================================ -->
+<section id="master-visual" class="block master-visual-block">
+  <div class="block-eyebrow">Workflow orchestration map</div>
+  <h2 class="block-title">One headless layer across the <em>vendor and partner</em> operating model.</h2>
+  <p class="block-lead">
+    Introw sits between the systems both sides already use, orchestrating the 14 partner use cases without forcing every motion back into a portal.
+  </p>
+
+  <div class="master-visual-canvas" aria-label="Master workflow orchestration map connecting vendor automations, Introw, and partner workflows">
+    <svg viewBox="0 0 1400 780" role="img" aria-labelledby="mw-title mw-desc">
+      <title id="mw-title">Master workflow orchestration map</title>
+      <desc id="mw-desc">Vendor experience and automations flow into Introw, then surface partner workflows and automations across partner tools.</desc>
+
+      <defs>
+        <pattern id="mw-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+          <path d="M36 0H0V36" fill="none" stroke="#e8e6df" stroke-width="1" />
+        </pattern>
+        <marker id="mw-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0L10 5L0 10Z" fill="rgba(21, 20, 14, 0.36)" />
+        </marker>
+        <filter id="mw-glow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="18" result="blur" />
+          <feColorMatrix in="blur" type="matrix" values="0.31 0 0 0 0 0 0.27 0 0 0 0 0 0.90 0 0 0 0 0 0.22 0" result="glow" />
+          <feMerge>
+            <feMergeNode in="glow" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width="1400" height="780" rx="28" fill="#fbfaf7" />
+      <rect class="mw-bg-grid" x="0" y="0" width="1400" height="780" fill="url(#mw-grid)" />
+      <circle cx="700" cy="390" r="220" fill="rgba(79, 70, 229, 0.10)" filter="url(#mw-glow)" />
+      <circle cx="245" cy="390" r="210" fill="rgba(234, 88, 12, 0.08)" />
+      <circle cx="1155" cy="390" r="210" fill="rgba(79, 70, 229, 0.08)" />
+
+      <text x="700" y="58" text-anchor="middle" class="mw-title">Vendor automations. Partner workflows. One orchestration layer.</text>
+      <text x="700" y="84" text-anchor="middle" class="mw-subtitle">Signals, context, actions, and writeback move through Introw instead of another partner portal.</text>
+
+      <rect x="42" y="132" width="418" height="548" rx="26" class="mw-panel" />
+      <rect x="940" y="132" width="418" height="548" rx="26" class="mw-panel" />
+
+      <text x="72" y="176" class="mw-kicker">Vendor experience</text>
+      <text x="72" y="205" class="mw-side-title">Automations owned by your team</text>
+      <text x="72" y="230" class="mw-small">CRM, channel ops, marketing, enablement, finance, and RevOps stay in control.</text>
+
+      <text x="970" y="176" class="mw-kicker">Partner experience</text>
+      <text x="970" y="205" class="mw-side-title">Workflows in partner tools</text>
+      <text x="970" y="230" class="mw-small">Partners ask, submit, learn, and act from the tools they already have open.</text>
+
+      <!-- Vendor-side tool logos -->
+      <g aria-label="Vendor tools">
+        <rect x="72" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/salesforce" x="87" y="267" width="24" height="24" />
+        <text x="99" y="323" text-anchor="middle" class="mw-small">Salesforce</text>
+
+        <rect x="144" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/hubspot" x="159" y="267" width="24" height="24" />
+        <text x="171" y="323" text-anchor="middle" class="mw-small">HubSpot</text>
+
+        <rect x="216" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/slack" x="231" y="267" width="24" height="24" />
+        <text x="243" y="323" text-anchor="middle" class="mw-small">Slack</text>
+
+        <rect x="288" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/notion" x="303" y="267" width="24" height="24" />
+        <text x="315" y="323" text-anchor="middle" class="mw-small">Notion</text>
+
+        <rect x="360" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/confluence" x="375" y="267" width="24" height="24" />
+        <text x="387" y="323" text-anchor="middle" class="mw-small">Confluence</text>
+      </g>
+
+      <!-- Partner-side tool logos -->
+      <g aria-label="Partner tools">
+        <rect x="988" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/slack" x="1003" y="267" width="24" height="24" />
+        <text x="1015" y="323" text-anchor="middle" class="mw-small">Slack</text>
+
+        <rect x="1060" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/microsoftteams" x="1075" y="267" width="24" height="24" />
+        <text x="1087" y="323" text-anchor="middle" class="mw-small">Teams</text>
+
+        <rect x="1132" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/gmail" x="1147" y="267" width="24" height="24" />
+        <text x="1159" y="323" text-anchor="middle" class="mw-small">Gmail</text>
+
+        <rect x="1204" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/anthropic" x="1219" y="267" width="24" height="24" />
+        <text x="1231" y="323" text-anchor="middle" class="mw-small">Claude</text>
+
+        <rect x="1276" y="252" width="54" height="54" rx="16" class="mw-tool" />
+        <image href="https://cdn.simpleicons.org/openai" x="1291" y="267" width="24" height="24" />
+        <text x="1303" y="323" text-anchor="middle" class="mw-small">ChatGPT</text>
+      </g>
+
+      <!-- Vendor-side use-case nodes -->
+      <g aria-label="Vendor-side use cases">
+        <rect x="76" y="366" width="158" height="52" rx="16" class="mw-node mw-node--vendor" />
+        <text x="96" y="386" class="mw-node-num">Use case 01</text>
+        <text x="96" y="405" class="mw-node-label">Partner acquisition</text>
+
+        <rect x="264" y="366" width="158" height="52" rx="16" class="mw-node mw-node--vendor" />
+        <text x="284" y="386" class="mw-node-num">Use case 02</text>
+        <text x="284" y="405" class="mw-node-label">Segmentation</text>
+
+        <rect x="76" y="438" width="158" height="52" rx="16" class="mw-node mw-node--vendor" />
+        <text x="96" y="458" class="mw-node-num">Use case 04</text>
+        <text x="96" y="477" class="mw-node-label">Activation alerts</text>
+
+        <rect x="264" y="438" width="158" height="52" rx="16" class="mw-node mw-node--vendor" />
+        <text x="284" y="458" class="mw-node-num">Use case 07</text>
+        <text x="284" y="477" class="mw-node-label">Campaigns</text>
+
+        <rect x="76" y="510" width="158" height="52" rx="16" class="mw-node mw-node--vendor" />
+        <text x="96" y="530" class="mw-node-num">Use case 09</text>
+        <text x="96" y="549" class="mw-node-label">Approvals</text>
+
+        <rect x="264" y="510" width="158" height="52" rx="16" class="mw-node mw-node--vendor" />
+        <text x="284" y="530" class="mw-node-num">Use case 10</text>
+        <text x="284" y="549" class="mw-node-label">Conflict checks</text>
+
+        <rect x="170" y="582" width="158" height="52" rx="16" class="mw-node mw-node--vendor" />
+        <text x="190" y="602" class="mw-node-num">Use case 12</text>
+        <text x="190" y="621" class="mw-node-label">QBR prep</text>
+      </g>
+
+      <!-- Partner-side use-case nodes -->
+      <g aria-label="Partner-side use cases">
+        <rect x="980" y="366" width="158" height="52" rx="16" class="mw-node mw-node--partner" />
+        <text x="1000" y="386" class="mw-node-num">Use case 03</text>
+        <text x="1000" y="405" class="mw-node-label">Onboarding</text>
+
+        <rect x="1168" y="366" width="158" height="52" rx="16" class="mw-node mw-node--partner" />
+        <text x="1188" y="386" class="mw-node-num">Use case 05</text>
+        <text x="1188" y="405" class="mw-node-label">Training</text>
+
+        <rect x="980" y="438" width="158" height="52" rx="16" class="mw-node mw-node--partner" />
+        <text x="1000" y="458" class="mw-node-num">Use case 06</text>
+        <text x="1000" y="477" class="mw-node-label">Support answers</text>
+
+        <rect x="1168" y="438" width="158" height="52" rx="16" class="mw-node mw-node--partner" />
+        <text x="1188" y="458" class="mw-node-num">Use case 08</text>
+        <text x="1188" y="477" class="mw-node-label">Deal registration</text>
+
+        <rect x="980" y="510" width="158" height="52" rx="16" class="mw-node mw-node--partner" />
+        <text x="1000" y="530" class="mw-node-num">Use case 11</text>
+        <text x="1000" y="549" class="mw-node-label">Deal coaching</text>
+
+        <rect x="1168" y="510" width="158" height="52" rx="16" class="mw-node mw-node--partner" />
+        <text x="1188" y="530" class="mw-node-num">Use case 14</text>
+        <text x="1188" y="549" class="mw-node-label">Ecosystem health</text>
+
+        <rect x="1074" y="582" width="158" height="52" rx="16" class="mw-node mw-node--partner" />
+        <text x="1094" y="602" class="mw-node-num">Use case 13</text>
+        <text x="1094" y="621" class="mw-node-label">Commissions</text>
+      </g>
+
+      <!-- Connector lanes into Introw -->
+      <path d="M422 500C500 500 530 474 606 474" class="mw-line mw-line--vendor" marker-end="url(#mw-arrow)" />
+
+      <path d="M980 500C900 500 866 474 794 474" class="mw-line mw-line--partner" marker-end="url(#mw-arrow)" />
+
+      <!-- Center Introw orchestration layer -->
+      <rect x="594" y="282" width="212" height="244" rx="30" class="mw-core" />
+      <g transform="translate(684 318) rotate(45)">
+        <rect x="0" y="0" width="34" height="34" rx="8" fill="#15140e" />
+        <rect x="10" y="10" width="14" height="14" rx="3" fill="#ea580c" />
+      </g>
+      <text x="700" y="385" text-anchor="middle" class="mw-core-title">Introw</text>
+      <text x="700" y="412" text-anchor="middle" class="mw-core-sub">Headless PRM</text>
+
+      <rect x="626" y="438" width="148" height="24" rx="12" class="mw-chip" />
+      <text x="700" y="454" text-anchor="middle" class="mw-chip-text">Agent orchestration</text>
+
+      <rect x="626" y="472" width="148" height="24" rx="12" fill="rgba(79, 70, 229, 0.12)" stroke="rgba(79, 70, 229, 0.22)" />
+      <text x="700" y="488" text-anchor="middle" class="mw-label">CRM writeback</text>
+
+      <rect x="626" y="506" width="148" height="24" rx="12" fill="rgba(234, 88, 12, 0.12)" stroke="rgba(234, 88, 12, 0.24)" />
+      <text x="700" y="522" text-anchor="middle" class="mw-label">Human-in-loop</text>
+
+      <text x="226" y="704" text-anchor="middle" class="mw-small">Vendor-owned data, routing rules, approvals, segmentation, and program intelligence</text>
+      <text x="700" y="704" text-anchor="middle" class="mw-small">Identity, permissions, audit trail, agent actions, and CRM system-of-record writeback</text>
+      <text x="1174" y="704" text-anchor="middle" class="mw-small">Partner-facing answers, submissions, coaching, incentives, and next-best actions</text>
+    </svg>
+  </div>
+
+  <div class="master-visual-legend" aria-hidden="true">
+    <span><i class="vendor-dot"></i>Vendor-side automations</span>
+    <span><i class="introw-dot"></i>Introw orchestration layer</span>
+    <span><i class="partner-dot"></i>Partner-side workflows</span>
   </div>
 </section>
 
