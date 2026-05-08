@@ -289,24 +289,24 @@
     gap: 8px;
   }
 
-  /* Hero connected ecosystem visual */
+  /* Hero command surface visual */
   .hero-flow {
     position: relative;
-    min-height: 520px;
+    min-height: 540px;
     display: grid;
     place-items: center;
   }
   .flow-card {
     position: relative;
-    width: min(100%, 520px);
-    min-height: 500px;
+    width: min(100%, 540px);
+    min-height: 520px;
     border: 1px solid rgba(212, 210, 201, 0.72);
     border-radius: 38px;
     background:
-      radial-gradient(circle at 50% 44%, rgba(79, 70, 229, 0.22), transparent 30%),
-      radial-gradient(circle at 15% 34%, rgba(234, 88, 12, 0.14), transparent 32%),
-      radial-gradient(circle at 86% 60%, rgba(79, 70, 229, 0.12), transparent 34%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.74), rgba(245, 244, 237, 0.64));
+      radial-gradient(circle at 50% 40%, rgba(79, 70, 229, 0.20), transparent 30%),
+      radial-gradient(circle at 16% 24%, rgba(234, 88, 12, 0.13), transparent 30%),
+      radial-gradient(circle at 84% 76%, rgba(4, 120, 87, 0.10), transparent 28%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(245, 244, 237, 0.68));
     box-shadow: var(--shadow-lg);
     overflow: hidden;
     isolation: isolate;
@@ -318,84 +318,61 @@
     background-image:
       linear-gradient(to right, rgba(21, 20, 14, 0.04) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(21, 20, 14, 0.04) 1px, transparent 1px);
-    background-size: 44px 44px;
-    mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 72%);
-    -webkit-mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 72%);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 76%);
+    -webkit-mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 76%);
     z-index: -2;
   }
   .flow-card::after {
     content: '';
     position: absolute;
-    width: 300px;
-    height: 300px;
     left: 50%;
-    top: 44%;
+    top: 45%;
+    width: 330px;
+    height: 330px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background:
-      radial-gradient(circle, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.28) 42%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.24) 58%, transparent 72%);
     filter: blur(8px);
     z-index: -1;
   }
-  .flow-orbit {
+  .flow-thread {
     position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    border: 1px solid rgba(21, 20, 14, 0.11);
-    border-radius: 999px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(21, 20, 14, 0.26), transparent);
+    transform-origin: center;
     pointer-events: none;
   }
-  .flow-orbit--outer {
-    width: 410px;
-    height: 300px;
-  }
-  .flow-orbit--inner {
-    width: 280px;
-    height: 205px;
-    border-color: rgba(79, 70, 229, 0.18);
-    transform: translate(-50%, -50%) rotate(-8deg);
-  }
+  .flow-thread--one { width: 310px; left: 115px; top: 194px; transform: rotate(10deg); }
+  .flow-thread--two { width: 330px; left: 104px; top: 304px; transform: rotate(-12deg); }
+  .flow-thread--three { width: 250px; left: 146px; top: 402px; transform: rotate(5deg); opacity: 0.65; }
   .flow-core,
-  .flow-tool {
+  .flow-tool,
+  .flow-surface,
+  .flow-pill {
     position: absolute;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
   }
   .flow-core {
     left: 50%;
-    top: 45%;
+    top: 42%;
     transform: translate(-50%, -50%);
-    width: 188px;
-    min-height: 154px;
+    width: 226px;
+    min-height: 166px;
     border-radius: 30px;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 24px 22px;
-    background: rgba(255, 255, 255, 0.84);
-    border: 1px solid rgba(79, 70, 229, 0.22);
-    box-shadow: 0 18px 55px rgba(20, 18, 10, 0.12), 0 1px 2px rgba(20, 18, 10, 0.06);
-  }
-  .flow-core::before {
-    content: '';
-    position: absolute;
-    inset: -18px;
-    border-radius: 42px;
-    border: 1px solid rgba(255, 255, 255, 0.62);
-    pointer-events: none;
-  }
-  .flow-core::after {
-    content: '';
-    position: absolute;
-    inset: -34px;
-    border-radius: 54px;
-    border: 1px solid rgba(79, 70, 229, 0.12);
-    pointer-events: none;
+    padding: 24px 22px 22px;
+    color: var(--bg);
+    background:
+      radial-gradient(circle at 80% 0%, rgba(234, 88, 12, 0.20), transparent 42%),
+      linear-gradient(145deg, #15140e, #2a2820);
+    border: 1px solid rgba(250, 249, 245, 0.18);
+    box-shadow: 0 22px 60px rgba(20, 18, 10, 0.22), 0 1px 2px rgba(20, 18, 10, 0.08);
+    z-index: 4;
   }
   .flow-core-kicker {
-    margin-bottom: 10px;
-    color: var(--warn);
+    margin-bottom: 12px;
+    color: #fcd1b3;
     font-size: 10px;
     line-height: 1;
     font-weight: 800;
@@ -406,11 +383,10 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    justify-content: center;
   }
   .flow-logo-img {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: 9px;
     object-fit: contain;
     flex-shrink: 0;
@@ -418,28 +394,29 @@
   .flow-core strong {
     display: block;
     font-family: var(--serif);
-    font-size: 30px;
-    line-height: 1.05;
+    font-size: 32px;
+    line-height: 1;
     letter-spacing: -0.03em;
     font-weight: 500;
   }
   .flow-core span {
     display: block;
-    max-width: 18ch;
-    margin: 14px auto 0;
+    max-width: 24ch;
+    margin: 14px 0 0;
     font-size: 12px;
-    line-height: 1.35;
-    color: var(--ink-muted);
+    line-height: 1.45;
+    color: rgba(250, 249, 245, 0.72);
   }
   .flow-tool {
-    width: 58px;
-    height: 58px;
-    border-radius: 18px;
+    width: 54px;
+    height: 54px;
+    border-radius: 17px;
     display: grid;
     place-items: center;
-    background: rgba(255, 255, 255, 0.82);
-    border: 1px solid rgba(212, 210, 201, 0.88);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(212, 210, 201, 0.9);
     box-shadow: 0 12px 26px rgba(20, 18, 10, 0.10), 0 1px 2px rgba(20, 18, 10, 0.04);
+    z-index: 3;
     animation: floatNode 8s ease-in-out infinite;
   }
   .flow-tool::after {
@@ -458,71 +435,76 @@
     height: 24px;
     object-fit: contain;
   }
-  .flow-tool--sf { left: 86px; top: 108px; }
-  .flow-tool--hubspot { left: 38px; top: 238px; animation-delay: -2s; }
-  .flow-tool--slack-vendor { left: 128px; bottom: 92px; animation-delay: -4s; }
-  .flow-tool--teams { right: 86px; top: 108px; animation-delay: -1s; }
-  .flow-tool--gmail { right: 38px; top: 238px; animation-delay: -3s; }
-  .flow-tool--slack-partner { right: 128px; bottom: 92px; animation-delay: -5s; }
-  .flow-side {
-    position: absolute;
-    top: 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    max-width: 148px;
-    color: var(--ink-muted);
-    font-size: 12px;
-    line-height: 1.35;
-  }
-  .flow-side strong {
-    color: var(--ink);
+  .flow-tool--sf { left: 72px; top: 116px; }
+  .flow-tool--hubspot { left: 36px; top: 246px; animation-delay: -2s; }
+  .flow-tool--slack-vendor { left: 124px; bottom: 106px; animation-delay: -4s; }
+  .flow-tool--teams { right: 72px; top: 116px; animation-delay: -1s; }
+  .flow-tool--gmail { right: 36px; top: 246px; animation-delay: -3s; }
+  .flow-tool--slack-partner { right: 124px; bottom: 106px; animation-delay: -5s; }
+  .flow-pill {
+    top: 24px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(212, 210, 201, 0.82);
+    color: var(--ink-soft);
     font-size: 11px;
     line-height: 1;
-    letter-spacing: 0.1em;
+    font-weight: 800;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
-  .flow-side--vendor { left: 28px; text-align: left; }
-  .flow-side--partner { right: 28px; text-align: right; align-items: flex-end; }
-  .flow-bottom-note {
-    position: absolute;
+  .flow-pill--vendor { left: 28px; }
+  .flow-pill--partner { right: 28px; }
+  .flow-surface {
+    width: 188px;
+    padding: 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(212, 210, 201, 0.86);
+    box-shadow: 0 16px 36px rgba(20, 18, 10, 0.10), 0 1px 2px rgba(20, 18, 10, 0.04);
+    z-index: 5;
+  }
+  .flow-surface--left { left: 36px; top: 342px; }
+  .flow-surface--right { right: 32px; top: 332px; }
+  .flow-surface--bottom {
     left: 50%;
-    bottom: 28px;
+    bottom: 24px;
     transform: translateX(-50%);
-    width: calc(100% - 70px);
-    padding: 13px 16px;
-    border: 1px solid rgba(212, 210, 201, 0.78);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.58);
-    text-align: center;
+    width: 270px;
+  }
+  .flow-surface-kicker {
+    font-family: var(--serif);
+    font-size: 11px;
+    font-style: italic;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .flow-surface-title {
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .flow-surface-copy {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.35;
     color: var(--ink-muted);
-    font-size: 12px;
-    line-height: 1.45;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
-  .flow-bottom-note strong { color: var(--ink); font-weight: 700; }
-  .flow-ambient {
-    position: absolute;
+  .flow-status {
+    display: inline-flex;
+    margin-top: 10px;
+    padding: 4px 8px;
     border-radius: 999px;
-    pointer-events: none;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 800;
   }
-  .flow-ambient--vendor {
-    left: 32px;
-    top: 104px;
-    width: 190px;
-    height: 270px;
-    background: rgba(234, 88, 12, 0.08);
-    filter: blur(18px);
-  }
-  .flow-ambient--partner {
-    right: 32px;
-    top: 104px;
-    width: 190px;
-    height: 270px;
-    background: rgba(79, 70, 229, 0.08);
-    filter: blur(18px);
-  }
+  .flow-surface--left .flow-status { background: var(--warn-soft); color: var(--warn); }
+  .flow-surface--bottom .flow-status { background: var(--green-soft); color: var(--green); }
   @keyframes floatNode {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -535,7 +517,7 @@
   @media (max-width: 1040px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero-flow {
-      min-height: 520px;
+      min-height: 540px;
       max-width: 580px;
       margin: 0 auto;
       width: 100%;
@@ -543,23 +525,22 @@
   }
   @media (max-width: 560px) {
     .hero { padding: 56px 18px 72px; }
-    .flow-card { min-height: 560px; }
-    .flow-orbit--outer { width: 340px; height: 280px; }
-    .flow-orbit--inner { width: 235px; height: 190px; }
-    .flow-core { width: 164px; min-height: 144px; }
-    .flow-core strong { font-size: 26px; }
-    .flow-side { top: 22px; max-width: 125px; }
-    .flow-side--vendor { left: 18px; }
-    .flow-side--partner { right: 18px; }
-    .flow-tool { width: 52px; height: 52px; border-radius: 16px; }
-    .flow-tool--sf { left: 42px; top: 126px; }
-    .flow-tool--hubspot { left: 24px; top: 254px; }
-    .flow-tool--slack-vendor { left: 80px; bottom: 116px; }
-    .flow-tool--teams { right: 42px; top: 126px; }
-    .flow-tool--gmail { right: 24px; top: 254px; }
-    .flow-tool--slack-partner { right: 80px; bottom: 116px; }
-    .flow-tool::after { font-size: 10px; }
-    .flow-bottom-note { bottom: 22px; width: calc(100% - 36px); }
+    .flow-card { min-height: 620px; }
+    .flow-core { top: 37%; width: 210px; }
+    .flow-tool { width: 50px; height: 50px; border-radius: 16px; }
+    .flow-tool--sf { left: 32px; top: 112px; }
+    .flow-tool--hubspot { left: 20px; top: 240px; }
+    .flow-tool--slack-vendor { left: 70px; bottom: 156px; }
+    .flow-tool--teams { right: 32px; top: 112px; }
+    .flow-tool--gmail { right: 20px; top: 240px; }
+    .flow-tool--slack-partner { right: 70px; bottom: 156px; }
+    .flow-tool::after { display: none; }
+    .flow-pill--vendor { left: 18px; }
+    .flow-pill--partner { right: 18px; }
+    .flow-surface { width: 150px; padding: 12px; }
+    .flow-surface--left { left: 18px; top: 384px; }
+    .flow-surface--right { right: 18px; top: 384px; }
+    .flow-surface--bottom { width: calc(100% - 36px); bottom: 20px; }
   }
 
   /* ============================================================
@@ -1506,19 +1487,12 @@
 
     <aside class="hero-flow" aria-label="Vendor and partner tools connected through Introw">
       <div class="flow-card">
-        <div class="flow-ambient flow-ambient--vendor"></div>
-        <div class="flow-ambient flow-ambient--partner"></div>
-        <div class="flow-orbit flow-orbit--outer"></div>
-        <div class="flow-orbit flow-orbit--inner"></div>
+        <div class="flow-thread flow-thread--one"></div>
+        <div class="flow-thread flow-thread--two"></div>
+        <div class="flow-thread flow-thread--three"></div>
 
-        <div class="flow-side flow-side--vendor">
-          <strong>Vendor side</strong>
-          CRM, channel ops, and internal GTM systems stay in sync.
-        </div>
-        <div class="flow-side flow-side--partner">
-          <strong>Partner side</strong>
-          Partners keep working from their inbox, chat, and CRM.
-        </div>
+        <div class="flow-pill flow-pill--vendor">Vendor systems</div>
+        <div class="flow-pill flow-pill--partner">Partner tools</div>
 
         <div class="flow-tool flow-tool--sf" data-label="Salesforce">
           <img src="https://api.companyenrich.com/logo/salesforce.com" alt="" loading="lazy">
@@ -1545,13 +1519,30 @@
             <div class="flow-core-kicker">Headless PRM</div>
             <div class="flow-logo-row">
               <img class="flow-logo-img" src="https://assets.introw.io/introw-logo-square.png" alt="Introw" loading="lazy">
+              <strong>introw.io</strong>
             </div>
             <span>The partner layer between your team, partner teams, and the systems both sides already use.</span>
           </div>
         </div>
 
-        <div class="flow-bottom-note">
-          <strong>One connected layer</strong> surfacing partner context in the tools both sides already use.
+        <div class="flow-surface flow-surface--left">
+          <div class="flow-surface-kicker">Vendor action</div>
+          <div class="flow-surface-title">QBR draft ready for Partner Co.</div>
+          <div class="flow-surface-copy">Pipeline, enablement, engagement, and next steps assembled from CRM + docs.</div>
+          <span class="flow-status">Review in Slack</span>
+        </div>
+
+        <div class="flow-surface flow-surface--right">
+          <div class="flow-surface-kicker">Partner workflow</div>
+          <div class="flow-surface-title">Deal registration captured from chat</div>
+          <div class="flow-surface-copy">Plain-language submission becomes a clean CRM record with conflict checks.</div>
+          <span class="flow-status">90 sec intake</span>
+        </div>
+
+        <div class="flow-surface flow-surface--bottom">
+          <div class="flow-surface-kicker">Shared context</div>
+          <div class="flow-surface-title">Right information, surfaced in the tool already open.</div>
+          <span class="flow-status">CRM sync complete</span>
         </div>
       </div>
     </aside>
