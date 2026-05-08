@@ -295,24 +295,24 @@
     gap: 8px;
   }
 
-  /* Hero connected-tools visual */
+  /* Hero connected ecosystem visual */
   .hero-flow {
     position: relative;
-    min-height: 500px;
+    min-height: 520px;
     display: grid;
     place-items: center;
   }
   .flow-card {
     position: relative;
-    width: min(100%, 480px);
-    min-height: 480px;
-    border: 1px solid rgba(212, 210, 201, 0.9);
-    border-radius: 32px;
+    width: min(100%, 520px);
+    min-height: 500px;
+    border: 1px solid rgba(212, 210, 201, 0.72);
+    border-radius: 38px;
     background:
-      radial-gradient(circle at 50% 46%, rgba(79, 70, 229, 0.14), transparent 34%),
-      radial-gradient(circle at 12% 18%, rgba(234, 88, 12, 0.10), transparent 34%),
-      radial-gradient(circle at 88% 82%, rgba(79, 70, 229, 0.10), transparent 34%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(245, 244, 237, 0.76));
+      radial-gradient(circle at 50% 44%, rgba(79, 70, 229, 0.22), transparent 30%),
+      radial-gradient(circle at 15% 34%, rgba(234, 88, 12, 0.14), transparent 32%),
+      radial-gradient(circle at 86% 60%, rgba(79, 70, 229, 0.12), transparent 34%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.74), rgba(245, 244, 237, 0.64));
     box-shadow: var(--shadow-lg);
     overflow: hidden;
     isolation: isolate;
@@ -322,166 +322,227 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(to right, rgba(21, 20, 14, 0.055) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(21, 20, 14, 0.055) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(circle at 50% 48%, black 0%, transparent 78%);
-    -webkit-mask-image: radial-gradient(circle at 50% 48%, black 0%, transparent 78%);
+      linear-gradient(to right, rgba(21, 20, 14, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(21, 20, 14, 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 72%);
+    -webkit-mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 72%);
     z-index: -2;
   }
   .flow-card::after {
     content: '';
     position: absolute;
-    width: 190px;
-    height: 190px;
+    width: 300px;
+    height: 300px;
     left: 50%;
-    top: 47%;
+    top: 44%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: rgba(79, 70, 229, 0.12);
-    filter: blur(28px);
+    background:
+      radial-gradient(circle, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.28) 42%, transparent 70%);
+    filter: blur(8px);
     z-index: -1;
   }
-  .flow-lines {
+  .flow-orbit {
     position: absolute;
-    inset: 26px;
-    width: calc(100% - 52px);
-    height: calc(100% - 52px);
-    overflow: visible;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(21, 20, 14, 0.11);
+    border-radius: 999px;
+    pointer-events: none;
   }
-  .flow-lines path {
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 1.75;
-    stroke-dasharray: 6 14;
-    animation: flowDash 18s linear infinite;
+  .flow-orbit--outer {
+    width: 410px;
+    height: 300px;
   }
-  .flow-lines .line-primary { stroke: rgba(79, 70, 229, 0.34); }
-  .flow-lines .line-warn { stroke: rgba(234, 88, 12, 0.34); animation-duration: 15s; }
-  .flow-lines .line-soft { stroke: rgba(21, 20, 14, 0.18); animation-duration: 22s; }
+  .flow-orbit--inner {
+    width: 280px;
+    height: 205px;
+    border-color: rgba(79, 70, 229, 0.18);
+    transform: translate(-50%, -50%) rotate(-8deg);
+  }
   .flow-core,
   .flow-tool {
     position: absolute;
-    background: rgba(255, 255, 255, 0.84);
-    border: 1px solid rgba(212, 210, 201, 0.92);
-    box-shadow: var(--shadow);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
   }
   .flow-core {
     left: 50%;
-    top: 47%;
+    top: 45%;
     transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 188px;
+    min-height: 154px;
+    border-radius: 30px;
     display: grid;
     place-items: center;
     text-align: center;
-    padding: 22px;
-    border-color: rgba(79, 70, 229, 0.35);
+    padding: 24px 22px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(79, 70, 229, 0.22);
+    box-shadow: 0 18px 55px rgba(20, 18, 10, 0.12), 0 1px 2px rgba(20, 18, 10, 0.06);
+  }
+  .flow-core::before {
+    content: '';
+    position: absolute;
+    inset: -18px;
+    border-radius: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    pointer-events: none;
+  }
+  .flow-core::after {
+    content: '';
+    position: absolute;
+    inset: -34px;
+    border-radius: 54px;
+    border: 1px solid rgba(79, 70, 229, 0.12);
+    pointer-events: none;
+  }
+  .flow-core-kicker {
+    margin-bottom: 10px;
+    color: var(--warn);
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .flow-logo-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
   }
   .flow-logo-mark {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     border-radius: 7px;
     background: var(--ink);
     transform: rotate(45deg);
-    margin: 0 auto 14px;
     position: relative;
+    flex-shrink: 0;
   }
   .flow-logo-mark::after {
     content: '';
     position: absolute;
-    inset: 7px;
+    inset: 6px;
     background: var(--warn);
     border-radius: 2px;
   }
   .flow-core strong {
     display: block;
     font-family: var(--serif);
-    font-size: 26px;
+    font-size: 30px;
     line-height: 1.05;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     font-weight: 500;
   }
   .flow-core span {
     display: block;
-    margin-top: 8px;
-    font-size: 11px;
+    max-width: 18ch;
+    margin: 14px auto 0;
+    font-size: 12px;
     line-height: 1.35;
     color: var(--ink-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 700;
   }
   .flow-tool {
-    width: 128px;
-    min-height: 48px;
-    border-radius: 999px;
-    padding: 9px 13px;
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    color: var(--ink);
-    font-size: 13px;
-    font-weight: 700;
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(212, 210, 201, 0.88);
+    box-shadow: 0 12px 26px rgba(20, 18, 10, 0.10), 0 1px 2px rgba(20, 18, 10, 0.04);
     animation: floatNode 8s ease-in-out infinite;
   }
-  .flow-tool img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-  .flow-tool span {
-    display: block;
-    font-size: 10px;
-    line-height: 1.2;
-    color: var(--ink-muted);
-    font-weight: 500;
-  }
-  .flow-tool--sf { left: 34px; top: 86px; }
-  .flow-tool--hubspot { left: 70px; top: 204px; animation-delay: -2s; }
-  .flow-tool--slack-vendor { left: 34px; bottom: 92px; animation-delay: -4s; }
-  .flow-tool--teams { right: 34px; top: 86px; animation-delay: -1s; }
-  .flow-tool--gmail { right: 70px; top: 204px; animation-delay: -3s; }
-  .flow-tool--slack-partner { right: 34px; bottom: 92px; animation-delay: -5s; }
-  .flow-side-label {
+  .flow-tool::after {
+    content: attr(data-label);
     position: absolute;
-    top: 24px;
-    padding: 6px 11px;
-    border-radius: 999px;
-    background: rgba(21, 20, 14, 0.78);
-    color: rgba(250, 249, 245, 0.88);
-    font-size: 10px;
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: var(--ink-muted);
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+  }
+  .flow-tool img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  .flow-tool--sf { left: 86px; top: 108px; }
+  .flow-tool--hubspot { left: 38px; top: 238px; animation-delay: -2s; }
+  .flow-tool--slack-vendor { left: 128px; bottom: 92px; animation-delay: -4s; }
+  .flow-tool--teams { right: 86px; top: 108px; animation-delay: -1s; }
+  .flow-tool--gmail { right: 38px; top: 238px; animation-delay: -3s; }
+  .flow-tool--slack-partner { right: 128px; bottom: 92px; animation-delay: -5s; }
+  .flow-side {
+    position: absolute;
+    top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 148px;
+    color: var(--ink-muted);
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .flow-side strong {
+    color: var(--ink);
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
-  .flow-side-label--vendor { left: 26px; }
-  .flow-side-label--partner { right: 26px; }
+  .flow-side--vendor { left: 28px; text-align: left; }
+  .flow-side--partner { right: 28px; text-align: right; align-items: flex-end; }
   .flow-bottom-note {
     position: absolute;
     left: 50%;
-    bottom: 26px;
+    bottom: 28px;
     transform: translateX(-50%);
-    width: calc(100% - 56px);
+    width: calc(100% - 70px);
+    padding: 13px 16px;
+    border: 1px solid rgba(212, 210, 201, 0.78);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.58);
     text-align: center;
     color: var(--ink-muted);
     font-size: 12px;
     line-height: 1.45;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   .flow-bottom-note strong { color: var(--ink); font-weight: 700; }
-  @keyframes flowDash {
-    to { stroke-dashoffset: -160; }
+  .flow-ambient {
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+  }
+  .flow-ambient--vendor {
+    left: 32px;
+    top: 104px;
+    width: 190px;
+    height: 270px;
+    background: rgba(234, 88, 12, 0.08);
+    filter: blur(18px);
+  }
+  .flow-ambient--partner {
+    right: 32px;
+    top: 104px;
+    width: 190px;
+    height: 270px;
+    background: rgba(79, 70, 229, 0.08);
+    filter: blur(18px);
   }
   @keyframes floatNode {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .flow-lines path,
     .flow-tool {
       animation: none;
     }
@@ -489,8 +550,8 @@
   @media (max-width: 1040px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero-flow {
-      min-height: 500px;
-      max-width: 560px;
+      min-height: 520px;
+      max-width: 580px;
       margin: 0 auto;
       width: 100%;
     }
@@ -498,18 +559,22 @@
   @media (max-width: 560px) {
     .hero { padding: 56px 18px 72px; }
     .flow-card { min-height: 560px; }
-    .flow-core { width: 132px; height: 132px; }
-    .flow-core strong { font-size: 23px; }
-    .flow-tool { width: 112px; padding: 8px 10px; font-size: 12px; }
-    .flow-tool--sf { left: 16px; top: 94px; }
-    .flow-tool--hubspot { left: 30px; top: 220px; }
-    .flow-tool--slack-vendor { left: 16px; bottom: 126px; }
-    .flow-tool--teams { right: 16px; top: 94px; }
-    .flow-tool--gmail { right: 30px; top: 220px; }
-    .flow-tool--slack-partner { right: 16px; bottom: 126px; }
-    .flow-side-label--vendor { left: 16px; }
-    .flow-side-label--partner { right: 16px; }
-    .flow-bottom-note { bottom: 24px; width: calc(100% - 36px); }
+    .flow-orbit--outer { width: 340px; height: 280px; }
+    .flow-orbit--inner { width: 235px; height: 190px; }
+    .flow-core { width: 164px; min-height: 144px; }
+    .flow-core strong { font-size: 26px; }
+    .flow-side { top: 22px; max-width: 125px; }
+    .flow-side--vendor { left: 18px; }
+    .flow-side--partner { right: 18px; }
+    .flow-tool { width: 52px; height: 52px; border-radius: 16px; }
+    .flow-tool--sf { left: 42px; top: 126px; }
+    .flow-tool--hubspot { left: 24px; top: 254px; }
+    .flow-tool--slack-vendor { left: 80px; bottom: 116px; }
+    .flow-tool--teams { right: 42px; top: 126px; }
+    .flow-tool--gmail { right: 24px; top: 254px; }
+    .flow-tool--slack-partner { right: 80px; bottom: 116px; }
+    .flow-tool::after { font-size: 10px; }
+    .flow-bottom-note { bottom: 22px; width: calc(100% - 36px); }
   }
 
   /* ============================================================
@@ -1300,47 +1365,48 @@
 
     <aside class="hero-flow" aria-label="Vendor and partner tools connected through Introw">
       <div class="flow-card">
-        <div class="flow-side-label flow-side-label--vendor">Vendor side</div>
-        <div class="flow-side-label flow-side-label--partner">Partner side</div>
+        <div class="flow-ambient flow-ambient--vendor"></div>
+        <div class="flow-ambient flow-ambient--partner"></div>
+        <div class="flow-orbit flow-orbit--outer"></div>
+        <div class="flow-orbit flow-orbit--inner"></div>
 
-        <svg class="flow-lines" viewBox="0 0 420 500" aria-hidden="true">
-          <path class="line-primary" d="M48 86 C116 118 150 174 210 222 C270 174 304 118 372 86" />
-          <path class="line-warn" d="M84 206 C138 214 160 232 210 222 C260 232 282 214 336 206" />
-          <path class="line-primary" d="M48 362 C116 318 156 270 210 222 C264 270 304 318 372 362" />
-          <path class="line-soft" d="M210 86 C184 144 184 302 210 362 C236 302 236 144 210 86" />
-        </svg>
+        <div class="flow-side flow-side--vendor">
+          <strong>Vendor side</strong>
+          CRM, channel ops, and internal GTM systems stay in sync.
+        </div>
+        <div class="flow-side flow-side--partner">
+          <strong>Partner side</strong>
+          Partners keep working from their inbox, chat, and CRM.
+        </div>
 
-        <div class="flow-tool flow-tool--sf">
+        <div class="flow-tool flow-tool--sf" data-label="Salesforce">
           <img src="https://cdn.simpleicons.org/salesforce" alt="" loading="lazy">
-          <div>Salesforce<span>vendor CRM</span></div>
         </div>
-        <div class="flow-tool flow-tool--hubspot">
+        <div class="flow-tool flow-tool--hubspot" data-label="HubSpot">
           <img src="https://cdn.simpleicons.org/hubspot" alt="" loading="lazy">
-          <div>HubSpot<span>vendor CRM</span></div>
         </div>
-        <div class="flow-tool flow-tool--slack-vendor">
+        <div class="flow-tool flow-tool--slack-vendor" data-label="Slack">
           <img src="https://cdn.simpleicons.org/slack" alt="" loading="lazy">
-          <div>Slack<span>internal team</span></div>
         </div>
 
-        <div class="flow-tool flow-tool--teams">
+        <div class="flow-tool flow-tool--teams" data-label="Teams">
           <img src="https://cdn.simpleicons.org/microsoftteams" alt="" loading="lazy">
-          <div>Teams<span>partner team</span></div>
         </div>
-        <div class="flow-tool flow-tool--gmail">
+        <div class="flow-tool flow-tool--gmail" data-label="Gmail">
           <img src="https://cdn.simpleicons.org/gmail" alt="" loading="lazy">
-          <div>Gmail<span>partner inbox</span></div>
         </div>
-        <div class="flow-tool flow-tool--slack-partner">
+        <div class="flow-tool flow-tool--slack-partner" data-label="Slack">
           <img src="https://cdn.simpleicons.org/slack" alt="" loading="lazy">
-          <div>Slack<span>shared channel</span></div>
         </div>
 
         <div class="flow-core">
           <div>
-            <div class="flow-logo-mark"></div>
-            <strong>introw.io</strong>
-            <span>headless partner layer</span>
+            <div class="flow-core-kicker">Headless PRM</div>
+            <div class="flow-logo-row">
+              <div class="flow-logo-mark"></div>
+              <strong>introw.io</strong>
+            </div>
+            <span>The partner layer between your team, partner teams, and the systems both sides already use.</span>
           </div>
         </div>
 
