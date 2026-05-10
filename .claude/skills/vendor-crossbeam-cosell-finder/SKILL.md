@@ -1,16 +1,16 @@
 ---
 name: vendor-crossbeam-cosell-finder
-description: Use when a Channel Chief, RevOps, AE-aligned Channel Manager, or PDM wants to find the best partner(s) to bring into a target account list — by combining Crossbeam (or Reveal) overlap data with Introw partner performance signals. Trigger phrases include "find partners that overlap with these accounts", "Crossbeam co-sell", "ELG partner match", "who already has the customer", "ecosystem-led match", "best partner for this target list", "warmest overlap on Account X".
+description: Use when a Channel Chief, RevOps, AE-aligned Channel Manager, or PDM wants to find the best partner(s) to bring into a target account list — by combining Crossbeam overlap data with Introw partner performance signals. Trigger phrases include "find partners that overlap with these accounts", "Crossbeam co-sell", "ELG partner match", "who already has the customer", "ecosystem-led match", "best partner for this target list", "warmest overlap on Account X".
 ---
 
 # Crossbeam Co-Sell Partner Finder (Vendor)
 
-**Audience**: Vendor — uses **claude.ai Introw** MCP + **claude.ai Crossbeam** MCP (works with Reveal too if installed).
+**Audience**: Vendor — uses **claude.ai Introw** MCP + **claude.ai Crossbeam** MCP.
 **Use case**: 02 — Partner Segmentation (with strong cross-cut to 08 Deal Registration / 11 Coaching).
 
 ## When to use this skill
 
-Use when a Channel Chief, RevOps, AE-aligned Channel Manager, or PDM wants to find the best partner(s) to bring into a target account list — by combining Crossbeam (or Reveal) overlap data with Introw partner performance signals.
+Use when a Channel Chief, RevOps, AE-aligned Channel Manager, or PDM wants to find the best partner(s) to bring into a target account list — by combining Crossbeam overlap data with Introw partner performance signals.
 
 **Sample prompts that fire this skill:**
 - "find partners that overlap with these accounts"
@@ -22,7 +22,7 @@ Use when a Channel Chief, RevOps, AE-aligned Channel Manager, or PDM wants to fi
 - "warmest overlap on Account X"
 
 ## Why this matters
-Ecosystem-Led Growth (ELG) only works when the ecosystem data is operationalized. Most channel teams have Crossbeam (or Reveal) producing overlap data weekly — and most of that data dies in a spreadsheet because no one has time to translate "Partner X has a customer relationship with Account Y" into a concrete co-sell motion. This skill closes that gap: it cross-checks a target account list against partner overlap data, scores partner-account fit using Introw performance signals (engagement, prior similar wins, certifications), and drafts the partner intro request.
+Ecosystem-Led Growth (ELG) only works when the ecosystem data is operationalized. Most channel teams have Crossbeam producing overlap data weekly — and most of that data dies in a spreadsheet because no one has time to translate "Partner X has a customer relationship with Account Y" into a concrete co-sell motion. This skill closes that gap: it cross-checks a target account list against partner overlap data, scores partner-account fit using Introw performance signals (engagement, prior similar wins, certifications), and drafts the partner intro request.
 
 For partners involved in deals: industry research consistently shows partner-influenced deals close at materially higher win rates and larger ACVs than vendor-direct equivalents in the same segment — but only when the *right* partner is matched to the *right* deal.
 

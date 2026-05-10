@@ -9,12 +9,12 @@ SKILL_VISUALS = {
     "vendor-acquisition-abm-orchestrator": {
         "title": "Top performers + ecosystem reach → joint-value ABM",
         "stages": [
-            ("Inputs", "trigger", "Top performers + strategic goals",
-             [("salesforce", "Salesforce"), ("hubspot", "HubSpot"), ("introw", "Introw goals")]),
+            ("Inputs", "trigger", "Top performers + strategic goals + ICP playbook",
+             [("salesforce", "Salesforce"), ("hubspot", "HubSpot"), ("introw", "Introw goals"), ("notion", "Notion")]),
             ("Agent + signals", "agent", "Pattern + ecosystem reach",
-             [("introw", "Introw"), ("crossbeam", "Crossbeam"), ("reveal", "Reveal")]),
+             [("introw", "Introw"), ("crossbeam", "Crossbeam")]),
             ("Sourcing", "system", "Net-new lookalike targets",
-             [("clay", "Clay"), ("linkedin", "LinkedIn Sales Nav"), ("zoominfo", "ZoomInfo")]),
+             [("clay", "Clay"), ("zoominfo", "ZoomInfo"), ("apollo", "Apollo")]),
             ("Outcome", "outcome", "ABM outreach + portal pre-config",
              [("introw", "Introw Portal"), ("gmail", "Gmail / Outlook")]),
         ],
@@ -23,8 +23,8 @@ SKILL_VISUALS = {
     "vendor-tier-promotion-batch-review": {
         "title": "Quarterly tier review · evidence-grounded · drafted comms",
         "stages": [
-            ("Whole partner base", "trigger", "Tier · revenue · certs · goals · engagement",
-             [("introw", "Introw"), ("salesforce", "CRM"), ("hubspot", "CRM")]),
+            ("Whole partner base", "trigger", "Tier · revenue · certs · goals · engagement + tier rules",
+             [("introw", "Introw"), ("salesforce", "CRM"), ("hubspot", "CRM"), ("notion", "Notion")]),
             ("Score", "agent", "Eligibility per criterion · sustained-quarter bar",
              [("introw", "Introw")]),
             ("Bucket", "decision", "Promote · Hold · Demote · Watch",
@@ -39,7 +39,7 @@ SKILL_VISUALS = {
             ("Target list", "trigger", "Open opps · ABM · expansion candidates",
              [("salesforce", "Salesforce"), ("hubspot", "HubSpot")]),
             ("Pull overlaps", "system", "Customer · opp · champion · lapsed",
-             [("crossbeam", "Crossbeam"), ("reveal", "Reveal")]),
+             [("crossbeam", "Crossbeam")]),
             ("Score partner-fit", "agent", "Overlap × engagement × prior wins",
              [("introw", "Introw")]),
             ("Outcome", "outcome", "Drafted intro · pre-filled registration",
@@ -52,8 +52,8 @@ SKILL_VISUALS = {
         "stages": [
             ("Kickoff context", "trigger", "Transcript + existing partner data",
              [("otter", "Otter"), ("fathom", "Fathom"), ("gong", "Gong"), ("salesforce", "CRM")]),
-            ("Mine + plan", "agent", "Commitments · capabilities · constraints",
-             [("introw", "Introw")]),
+            ("Mine + plan", "agent", "Commitments · capabilities · constraints (templates from playbook)",
+             [("introw", "Introw"), ("notion", "Notion")]),
             ("Push tasks", "system", "Owners · due dates · why-notes",
              [("introw", "Introw")]),
             ("Headless run", "outcome", "Multi-channel chase + checkpoints",
@@ -94,8 +94,8 @@ SKILL_VISUALS = {
              [("introw", "Introw"), ("salesforce", "Salesforce"), ("hubspot", "HubSpot")]),
             ("Diagnose", "decision", "Per-partner blocker",
              [("introw", "Introw")]),
-            ("Personalized message", "agent", "Mapped to specific goal + blocker",
-             [("introw", "Introw")]),
+            ("Personalized message", "agent", "Mapped to goal + blocker (templates from playbook)",
+             [("introw", "Introw"), ("notion", "Notion")]),
             ("Distribute + measure", "outcome", "Right channel · re-audit at 14 days",
              [("slack", "Slack"), ("teams", "Teams"), ("gmail", "Email")]),
         ],
@@ -115,14 +115,16 @@ SKILL_VISUALS = {
     },
     # ========= UC05 — Training =========
     "vendor-microcourse-from-closed-lost": {
-        "title": "Closed-lost patterns → micro-courses that change deal outcomes",
+        "title": "Loss patterns OR a knowledge base → micro-courses, deployable in under an hour",
         "stages": [
-            ("Loss signal", "trigger", "Closed-lost partner deals + lost-reasons",
-             [("salesforce", "Salesforce"), ("hubspot", "HubSpot"), ("introw", "Introw")]),
-            ("Cluster + diagnose", "agent", "Failure patterns → underlying gap",
+            ("Source", "trigger", "Closed-lost partner deals + lost-reasons",
+             [("salesforce", "Salesforce"), ("hubspot", "HubSpot"), ("introw", "Introw")],
+             [("trigger", "Or: existing knowledge-base content directly",
+               [("notion", "Notion"), ("confluence", "Confluence"), ("gdrive", "Drive"), ("box", "Box")])]),
+            ("Cluster + diagnose", "agent", "Failure patterns → underlying gap (when loss-driven)",
              [("introw", "Introw")]),
-            ("Generate from KB", "system", "Course outline + open-question rubric",
-             [("notion", "Notion"), ("confluence", "Confluence"), ("gdrive", "Drive"), ("box", "Box")]),
+            ("Generate course", "system", "Outline · worked example · open-question rubric",
+             [("introw", "Introw")]),
             ("Distribute", "outcome", "Targeted to partners working similar pipeline",
              [("introw", "Introw tasks"), ("gmail", "Email"), ("slack", "Slack")]),
         ],
@@ -262,10 +264,12 @@ SKILL_VISUALS = {
     },
     # ========= UC11 — Deal Coaching =========
     "vendor-deal-coach-from-similar-wins": {
-        "title": "Coaching grounded in your past wins · not generic playbook",
+        "title": "This specific partner deal · coached from your past wins",
         "stages": [
-            ("Active deal", "trigger", "Stage · activity · objections · stakeholders",
-             [("salesforce", "Salesforce"), ("hubspot", "HubSpot"), ("slack", "Slack")]),
+            ("The specific deal", "trigger", "The active partner deal in flight",
+             [("salesforce", "Deal record"), ("hubspot", "Deal record")],
+             [("trigger", "Stage · activity · objections · stakeholders",
+               [("introw", "Introw"), ("slack", "Last comments")])]),
             ("Find comparables", "system", "Similar vertical · size · product · partner type",
              [("introw", "Introw"), ("notion", "Notion"), ("gong", "Gong"), ("chorus", "Chorus")]),
             ("Extract pattern", "agent", "What worked · per stage · objection lines · assets",
@@ -275,10 +279,12 @@ SKILL_VISUALS = {
         ],
     },
     "partner-deal-war-room": {
-        "title": "Partner pulls up a coaching packet in seconds — in-deal",
+        "title": "Partner's specific deal · coaching packet in seconds",
         "stages": [
-            ("Active deal", "trigger", "Partner's deal context",
-             [("introw-connect", "Introw Connect"), ("salesforce", "CRM")]),
+            ("The specific deal", "trigger", "The partner's deal in flight",
+             [("introw-connect", "Deal record")],
+             [("trigger", "Recent activity · last comments · open tasks",
+               [("salesforce", "CRM"), ("slack", "Slack")])]),
             ("Pull assets", "system", "Vendor playbook · battle cards · similar wins · calls",
              [("notion", "Notion"), ("confluence", "Confluence"), ("gong", "Gong")]),
             ("Stage-aware coach", "agent", "Top 3 moves · objection lines · drafted message",
@@ -293,8 +299,8 @@ SKILL_VISUALS = {
         "stages": [
             ("Pull connected systems", "trigger", "Pipeline · goals · engagement · commissions",
              [("salesforce", "Salesforce"), ("hubspot", "HubSpot"), ("introw", "Introw"), ("finance", "Finance")]),
-            ("Generate", "agent", "Full draft · risks at top · agenda",
-             [("introw", "Introw")]),
+            ("Generate", "agent", "Full draft · risks at top · agenda (template from playbook)",
+             [("introw", "Introw"), ("notion", "Notion")]),
             ("Coverage sweep", "system", "Single partner OR book-wide",
              [("introw", "Introw")]),
             ("PDM 15-min edit", "outcome", "Strategic refinement · ship",
@@ -375,15 +381,32 @@ def _tool_pill(tool_id, label):
     return f'<span class="tool-pill tool-pill--{tool_id}">{html_lib.escape(label)}</span>'
 
 
-def _node(stage_label, ntype, title, tools):
+def _node_inner(ntype, title, tools):
     tools_html = "".join(_tool_pill(t, lbl) for t, lbl in tools)
     return (
-        f'<div class="uc-visual-stage">'
-        f'<span class="uc-visual-stage-label">{html_lib.escape(stage_label)}</span>'
         f'<div class="uc-visual-node uc-visual-node--{ntype}">'
         f'<div class="uc-visual-node-title">{html_lib.escape(title)}</div>'
         f'<div class="uc-visual-node-tools">{tools_html}</div>'
-        f'</div></div>'
+        f'</div>'
+    )
+
+
+def _stage_html(stage_tuple):
+    # 4-tuple: (label, ntype, title, tools) — single node
+    # 5-tuple: (label, ntype, title, tools, [(ntype, title, tools), ...]) — primary + extras
+    if len(stage_tuple) == 5:
+        label, ntype, title, tools, extras = stage_tuple
+    else:
+        label, ntype, title, tools = stage_tuple
+        extras = []
+    nodes = [_node_inner(ntype, title, tools)]
+    for e_ntype, e_title, e_tools in extras:
+        nodes.append(_node_inner(e_ntype, e_title, e_tools))
+    return (
+        f'<div class="uc-visual-stage">'
+        f'<span class="uc-visual-stage-label">{html_lib.escape(label)}</span>'
+        f'{"".join(nodes)}'
+        f'</div>'
     )
 
 
@@ -402,8 +425,8 @@ def render_skill_visual(skill_name):
         '</div>',
         f'<div class="uc-visual-flow cols-{n}">',
     ]
-    for i, (label, ntype, title, tools) in enumerate(stages):
-        parts.append(_node(label, ntype, title, tools))
+    for i, stage_tuple in enumerate(stages):
+        parts.append(_stage_html(stage_tuple))
         if i < n - 1:
             parts.append('<div class="uc-visual-arrow" aria-hidden="true">→</div>')
     parts.append('</div>')

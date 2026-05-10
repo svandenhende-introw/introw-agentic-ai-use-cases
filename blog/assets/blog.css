@@ -1392,8 +1392,7 @@ footer.site-footer {
 }
 .tool-pill--introw,
 .tool-pill--introw-connect { --tool-color: #4f46e5; }
-.tool-pill--crossbeam,
-.tool-pill--reveal { --tool-color: #00bfa5; }
+.tool-pill--crossbeam { --tool-color: #00bfa5; }
 .tool-pill--salesforce { --tool-color: #00a1e0; }
 .tool-pill--hubspot { --tool-color: #ff7a59; }
 .tool-pill--slack { --tool-color: #4a154b; }
