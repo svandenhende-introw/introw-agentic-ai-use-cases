@@ -26,6 +26,7 @@
     </a>
     <nav class="primary-nav">
       <a href="./index.html">All articles</a>
+      <a href="./skills/index.html">Skills</a>
       <a href="../index.html#use-cases">Use cases</a>
       <a href="../index.html#integrations">Integrations</a>
     </nav>
@@ -67,17 +68,11 @@
 
 <div class="article-layout">
   <article class="article-body">
+    <aside class="tldr">
+      <div class="tldr-eyebrow">TL;DR</div>
+      <p>PDMs spend 2–4 hours per QBR on data assembly — 240–500 hours/year for a 30-partner book — which is why most programs only achieve 20–30% real QBR coverage. Agentic generation pulls pipeline, goals, activity, engagement, commissions, MAP status, and a recommended agenda from connected systems in ~10 seconds. PDMs spend 15 minutes editing instead of 4 hours assembling, finally making 100% partner coverage feasible.</p>
+    </aside>
 <h1 id="4-hours-of-prep-10-seconds-how-agentic-qbrs-make-100-partner-coverage-possible">4 Hours of Prep → 10 Seconds: How Agentic QBRs Make 100% Partner Coverage Possible</h1>
-<aside class="key-takeaways">
-    <div class="key-takeaways-eyebrow">Key takeaways</div>
-    <ul>
-      <li><strong>Definition</strong>: Partner QBR automation uses AI agents to instantly generate complete Quarterly Business Reviews — pulling pipeline, goals progress, activity, engagement, commissions, MAP status, and recommended agenda — directly from connected CRM, PRM, and engagement systems.</li>
-      <li><strong>The cost of manual QBR prep</strong>: PDMs spend <strong>2–4 hours per QBR</strong> on data assembly. For a 30-partner book with quarterly reviews, that's <strong>240–500 hours per PDM per year</strong> — most of which is mechanical work nobody enjoys.</li>
-      <li><strong>The coverage gap</strong>: most programs achieve only 20–30% real QBR coverage on their partner base because the prep cost makes 100% coverage economically impossible. Agentic generation makes 100% coverage feasible.</li>
-      <li><strong>Introw's approach</strong>: an AI agent generates the full QBR from connected systems in ~10 seconds. PDMs spend <strong>15 minutes editing</strong> the generated draft instead of 4 hours assembling one.</li>
-      <li><strong>Stakeholders</strong>: PDMs/CAMs, partners, channel leadership, RevOps, partner teams.</li>
-    </ul>
-  </aside>
 <h2 id="what-is-partner-qbr-automation">What is partner QBR automation?</h2>
 <p><strong>Partner QBR automation is the AI-driven generation of Quarterly Business Reviews — including pipeline analysis, goal progress, activity summaries, engagement scoring, commission status, mutual action plan tracking, and agenda recommendations — assembled instantly from connected CRM (Salesforce, HubSpot), PRM, and partner engagement systems.</strong> It replaces the 2–4 hours of manual data assembly per QBR that has historically capped how many partners a PDM can actually review in depth.</p>
 <h2 id="the-qbr-coverage-gap-nobody-admits-to">The QBR coverage gap nobody admits to</h2>
@@ -116,6 +111,16 @@
 <p>QBRs have historically been a binary in channel programs: either you do them well for your top 20% (and inadequately for the rest) or you cut corners across the board. The trade-off has been imposed by economics, not by intent. Every PDM wants to give every partner a real review. The hours don't exist.</p>
 <p>Agentic generation removes the trade-off. The prep cost collapses. The coverage gap closes. The partner program becomes the first kind that can credibly say it's reviewing every partner with rigor every quarter — and produce the data trail to prove it.</p>
 <p>The bigger architectural shift is that "doing the work of preparing for the meeting" stops being where PDM value is concentrated. The value moves to the conversation, the recommendation, the decision. The drudgery moves to the agent. That's the right division of labor — and it's the operating model that makes a 30-partner book actually feel like 30 individually managed relationships instead of 6 well-managed ones and 24 form-letter check-ins. For complementary insights, see <a href="./02-partner-segmentation.html">partner segmentation</a> and <a href="./14-ecosystem-performance.html">ecosystem performance</a>.</p>
+<aside class="key-takeaways">
+    <div class="key-takeaways-eyebrow">Key takeaways</div>
+    <ul>
+    <li><strong>Definition</strong>: Partner QBR automation uses AI agents to instantly generate complete Quarterly Business Reviews — pulling pipeline, goals progress, activity, engagement, commissions, MAP status, and recommended agenda — directly from connected CRM, PRM, and engagement systems.</li>
+    <li><strong>The cost of manual QBR prep</strong>: PDMs spend <strong>2–4 hours per QBR</strong> on data assembly. For a 30-partner book with quarterly reviews, that's <strong>240–500 hours per PDM per year</strong> — most of which is mechanical work nobody enjoys.</li>
+    <li><strong>The coverage gap</strong>: most programs achieve only 20–30% real QBR coverage on their partner base because the prep cost makes 100% coverage economically impossible. Agentic generation makes 100% coverage feasible.</li>
+    <li><strong>Introw's approach</strong>: an AI agent generates the full QBR from connected systems in ~10 seconds. PDMs spend <strong>15 minutes editing</strong> the generated draft instead of 4 hours assembling one.</li>
+    <li><strong>Stakeholders</strong>: PDMs/CAMs, partners, channel leadership, RevOps, partner teams.</li>
+    </ul>
+    </aside>
 <div class="faq-section"><h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <h3 id="what-is-a-partner-qbr">What is a partner QBR?</h3>
 <p>A partner QBR (Quarterly Business Review) is a structured quarterly meeting between a vendor's partner team (typically the PDM or CAM) and a channel partner to review pipeline, goals, performance against commitments, blockers, and strategic priorities for the next quarter. Effective QBRs anchor the partner relationship, surface risks early, and align both parties on the actions that drive partner-sourced revenue.</p>
@@ -132,7 +137,7 @@
 <h3 id="does-qbr-automation-replace-the-human-pdm-in-the-meeting">Does QBR automation replace the human PDM in the meeting?</h3>
 <p>No — automation replaces the <em>prep</em>, not the conversation. The PDM still runs the QBR, makes strategic recommendations, builds the partner relationship, and adjusts strategy. The agent handles the data assembly that nobody enjoys, freeing the PDM to spend the saved hours on the strategic and relational work that humans uniquely do well.</p>
 <aside class="skill-callout"><div class="skill-callout-eyebrow">Run it in Claude Code</div><h2>Get the skill</h2><p class="intro">Run this workflow in your own Claude Code terminal. Drop the SKILL.md into <code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code> — Claude triggers it on the prompts in the skill's description.</p><ul>
-<li><strong><a href="../.claude/skills/vendor-qbr-prep/SKILL.md">vendor-qbr-prep</a></strong> — Single-partner QBR prep and book-wide coverage sweep — assembles pipeline, goals, activity, engagement, commissions, MAP status, and recommended agenda. Makes 100% partner coverage feasible.</li>
+<li><strong><a href="./skills/vendor-qbr-prep.html">vendor-qbr-prep</a></strong> — Single-partner QBR prep and book-wide coverage sweep — assembles pipeline, goals, activity, engagement, commissions, MAP status, and recommended agenda. Makes 100% partner coverage feasible.</li>
 </ul></aside></div>
   </article>
     <aside class="article-toc" aria-label="Table of contents">

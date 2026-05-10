@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Deal Registration Watcher (Vendor) — Introw Skill</title>
+<meta name="description" content="Use when a Channel Ops, RevOps, or PDM user wants to scan the vendor&#x27;s Gmail or Outlook inbox for partner emails containing deal or lead registrations — auto-extract fields, validate, deduplicate against the CRM, and process the registration through Introw. Trigger phrases includ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <img class="brand-logo" src="https://assets.introw.io/introw-logo-square.png" alt="Introw" loading="eager">
+      Introw <span class="brand-suffix">/ skills</span>
+    </a>
+    <nav class="primary-nav">
+      <a href="../index.html">All articles</a>
+      <a href="./index.html">All skills</a>
+      <a href="../../index.html#integrations">Integrations</a>
+    </nav>
+    <a href="../../index.html" class="header-cta">
+      Back to Introw
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+
+<section class="article-hero">
+  <div class="article-hero-bg"></div>
+  <div class="article-hero-inner">
+    <a href="./index.html" class="breadcrumb">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      All skills
+    </a>
+    <div class="article-hero-eyebrow">
+      <span class="uc-num">Claude Code skill</span>
+      <span class="dot"></span>
+      <span>Vendor · <a href="../08-deal-registration.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-tint);">Use case 08: Deal Registration</a></span>
+    </div>
+    <h1>Email Deal Registration Watcher (Vendor)</h1>
+    <div class="skill-id">
+      <span class="skill-id-label">Skill ID</span>
+      <code>vendor-email-deal-registration-watcher</code>
+    </div>
+    <p class="lead">Use when a Channel Ops, RevOps, or PDM user wants to scan the vendor&#x27;s Gmail or Outlook inbox for partner emails containing deal or lead registrations — auto-extract fields, validate, deduplicate against the CRM, and process the registration through Introw. Trigger phrases include &quot;scan inbox for deal regs&quot;, &quot;process partner emails&quot;, &quot;watch inbox for registrations&quot;, &quot;auto-process deal regs from email&quot;, &quot;find off-portal deal regs&quot;, &quot;convert email registrations&quot;.</p>
+  </div>
+</section>
+
+<main class="skill-source-wrap">
+  <div class="skill-source-card">
+    <div class="skill-source-header">
+      <div class="skill-source-filename">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <code>SKILL.md</code>
+        <span class="skill-source-stats">94 lines · 999 words</span>
+      </div>
+      <div class="skill-source-actions">
+        <button type="button" class="skill-source-btn skill-source-copy" data-target="skill-md-vendor-email-deal-registration-watcher">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span>Copy</span>
+        </button>
+        <a class="skill-source-btn skill-source-download" href="../../.claude/skills/vendor-email-deal-registration-watcher/SKILL.md" download="vendor-email-deal-registration-watcher.md">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download SKILL.md</span>
+        </a>
+      </div>
+    </div>
+    <pre class="skill-source-pre"><code id="skill-md-vendor-email-deal-registration-watcher">---
+name: vendor-email-deal-registration-watcher
+description: Use when a Channel Ops, RevOps, or PDM user wants to scan the vendor&#x27;s Gmail or Outlook inbox for partner emails containing deal or lead registrations — auto-extract fields, validate, deduplicate against the CRM, and process the registration through Introw. Trigger phrases include &quot;scan inbox for deal regs&quot;, &quot;process partner emails&quot;, &quot;watch inbox for registrations&quot;, &quot;auto-process deal regs from email&quot;, &quot;find off-portal deal regs&quot;, &quot;convert email registrations&quot;.
+---
+
+# Email Deal Registration Watcher (Vendor)
+
+**Audience**: Vendor — **claude.ai Introw** MCP + Gmail / Outlook MCP (whichever is installed for the vendor&#x27;s mailbox).
+**Use case**: 08 — Deal Registration.
+
+## Why this matters
+Deal registration is the foundational transaction of every channel program — but **forms with 7+ fields drop completion 34%** (Computer Market Research), and partner portal adoption falls below 30% when submission takes &gt;2 minutes or approval exceeds 24h. The result: partners email AEs and channel ops directly with deal registrations, creating off-portal submissions that become Salesforce data hygiene projects, attribution gaps, and channel conflict. This skill flips that pattern — instead of forcing partners back into a portal, it **harvests the email submissions they already send** and processes them cleanly through Introw with proper attribution.
+
+Every captured registration carries **10–15 points of additional margin** through deal protection plus access to MDF and pre-sales support.
+
+## Process
+
+### Step 1 — Scope the inbox scan
+Confirm with the user:
+- Which mailbox(es)? Channel-ops shared inbox, AE inboxes, dedicated dealreg@ alias?
+- Which time window? Default trailing 7 days, configurable.
+- Which sender filters? E.g., only partners (skip internal threads, customer-direct).
+
+### Step 2 — Pull candidate emails
+Via Gmail / Outlook MCP:
+- Search trailing window with intent keywords (deal reg, register, opportunity, lead, prospect, account, lead share, please register, can you flag) plus partner-domain filters.
+- Pull email bodies + threads + attachments.
+- Skip auto-replies, internal forwards (unless they wrap a partner submission).
+
+### Step 3 — Classify per email
+For each candidate:
+- **Is this a deal/lead registration?** Yes / No / Maybe.
+- If Yes: **what fields are present?** (account, contact, value, close date, product, qualification context).
+- If Maybe: flag for human review with rationale.
+- If No: skip.
+
+### Step 4 — Identify the partner
+- Match sender domain against `Introw:search_partners` to identify the partner record.
+- If domain isn&#x27;t recognized, surface for human review — don&#x27;t attribute to &quot;unknown partner&quot;.
+- Identify the specific contact at the partner (sender name + email).
+
+### Step 5 — Extract structured fields
+Pull from the email body:
+- **Account** (company name, domain).
+- **Primary customer contact** (name, role, email, phone).
+- **Estimated deal value** + currency.
+- **Estimated close date**.
+- **Product / segment**.
+- **Use case / pain** (1–2 lines from email body).
+- **Stage / signal** (just identified, in conversations, evaluating, ready to buy).
+- Any vendor-specific custom fields configured in the form schema.
+
+### Step 6 — Pre-flight checks
+- **Required-field completeness.** If a required field is missing, draft a follow-up reply to the partner asking for it (don&#x27;t submit incomplete).
+- **Duplicate detection.** `Introw:search_form_submissions` and `Introw:search_crm_objects` against account name + domain. If already registered (same partner) → reply with the existing reference rather than creating a duplicate.
+- **Channel conflict check.** Cross-check the account against direct pipeline + other partner registrations. If conflict, flag for human review with conflict context (don&#x27;t auto-submit a contested registration).
+- **Tier / eligibility.** Confirm submitting partner&#x27;s tier/cert covers the product/segment per vendor rules; if not, route for human review.
+
+### Step 7 — Submit
+For clean, complete, conflict-free, eligible submissions:
+- `Introw:share_lead_or_register_deal` — submit with all extracted fields and partner attribution.
+- `Introw:add_comment` on the resulting deal record — capture the email source (subject, sender, timestamp) and the qualifying language from the email body so reviewers have full context.
+
+### Step 8 — Notify the partner
+- Auto-reply (or draft for human send) to the partner email confirming:
+  - &quot;Received and processed. Reference: #XYZ. Vendor SLA: 24h.&quot;
+  - Deal-protection benefit reminder (10–15 pts margin).
+  - Link to track status in their portal.
+- For incomplete submissions, draft the targeted follow-up question.
+
+### Step 9 — Audit trail
+- `Introw:add_comment` on the partner record summarizing the processed registration.
+- Mark the email read / labeled &quot;processed&quot; so the next sweep doesn&#x27;t reprocess.
+- Track exceptions (incomplete, duplicate, conflict, ineligible) in a digest for the user.
+
+## Output format
+- **Inbox sweep summary**: emails scanned, classified counts, processed counts, exceptions.
+- **Per-processed**: email source, partner, account, value, submission ID, comment ID.
+- **Exceptions list**: incomplete (with drafted follow-up), duplicates (with existing ref), conflicts (with context), ineligibles (with reason).
+- **Suggested next actions** — e.g., human review queue.
+
+## Guardrails &amp; PRM best practice
+- **Never silent-submit.** Echo the captured fields back in the partner-facing confirmation reply so they can correct mistakes immediately.
+- **Confirm the partner identity** by domain match — never guess attribution. &quot;Unknown partner&quot; goes to human review.
+- **Channel conflict at intake is non-negotiable.** Don&#x27;t auto-submit contested registrations — that&#x27;s exactly the trust-eroding miss the registration process is supposed to prevent.
+- **Don&#x27;t auto-approve.** This skill submits; vendor rules and `vendor-process-approval-queue` decide approval. Frame partner-facing confirmation as &quot;received, in review per SLA,&quot; not &quot;approved.&quot;
+- **Capture the source.** Every submission&#x27;s audit trail includes the email subject, sender, and timestamp via `add_comment` — auditors will ask.
+- **No silent rejections.** If a submission can&#x27;t be processed (duplicate, ineligible), reply to the partner with reason — silence destroys trust faster than rejection.
+- **Don&#x27;t reply with sensitive context.** Auto-replies confirm receipt; they don&#x27;t disclose other partners&#x27; or vendor-internal data.
+- **Idempotency.** Mark processed emails so a second sweep doesn&#x27;t double-submit. If the inbox lacks labeling, maintain an internal seen-list.
+- **Cross-skill handoff.** Conflicts feed `vendor-detect-channel-conflict`; clean submissions feed `vendor-review-deal-registrations` and `vendor-process-approval-queue`.
+- **Privacy.** Customer PII in emails is processed for registration only; don&#x27;t surface it in summaries that travel outside the channel ops scope.
+- **Margin reminder in the confirmation reply.** Partners forget what registration earns them; the 10–15 pts deal-protection margin is the lever that drives them to register again next time.
+</code></pre>
+  </div>
+  <p class="skill-install-hint">
+    Drop this file into <code>.claude/skills/vendor-email-deal-registration-watcher/SKILL.md</code> in your repo. Claude Code triggers the skill on the prompts described in the <code>description</code> field.
+  </p>
+</main>
+
+<script>
+  (function() {
+    var btns = document.querySelectorAll('.skill-source-copy');
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var target = document.getElementById(btn.dataset.target);
+        if (!target) return;
+        var text = target.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+          var label = btn.querySelector('span');
+          var prev = label.textContent;
+          label.textContent = 'Copied';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            label.textContent = prev;
+            btn.classList.remove('copied');
+          }, 1600);
+        });
+      });
+    });
+  })();
+</script>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Introw</div>
+        <div class="footer-tagline">Headless PRM, connected to your CRM. Beyond the portal — into the tools your team and partners already use.</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">All articles</a>
+        <a href="./index.html">All skills</a>
+        <a href="../../index.html#use-cases">Use cases</a>
+        <a href="../../index.html#integrations">Integrations</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Introw — Agentic PRM</div>
+      <div>Built for partner teams who'd rather build than configure portals.</div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

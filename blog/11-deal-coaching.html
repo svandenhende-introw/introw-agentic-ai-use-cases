@@ -26,6 +26,7 @@
     </a>
     <nav class="primary-nav">
       <a href="./index.html">All articles</a>
+      <a href="./skills/index.html">Skills</a>
       <a href="../index.html#use-cases">Use cases</a>
       <a href="../index.html#integrations">Integrations</a>
     </nav>
@@ -67,17 +68,11 @@
 
 <div class="article-layout">
   <article class="article-body">
+    <aside class="tldr">
+      <div class="tldr-eyebrow">TL;DR</div>
+      <p>Direct sales reps get coached weekly; partner sellers get a portal full of PDFs — and the win-rate gap shows it. AI deal coaching runs in every partner deal, embedded in the partner's own CRM, Slack, Teams, or email, with persona-specific guidance per partner type (SI, reseller, referral). Comparable AI coaching delivers 32–34% win-rate lift within six months while PDMs reclaim most of the ~13 hours/week they currently spend on routine in-deal advice.</p>
+    </aside>
 <h1 id="every-partner-deal-coached-how-agentic-deal-coaching-lifts-win-rates-without-hiring-100-pdms">Every Partner Deal, Coached: How Agentic Deal Coaching Lifts Win Rates Without Hiring 100 PDMs</h1>
-<aside class="key-takeaways">
-    <div class="key-takeaways-eyebrow">Key takeaways</div>
-    <ul>
-      <li><strong>Definition</strong>: AI deal coaching is an in-deal advisory model where an AI agent — segment-specific by partner type and pulling live deal context — provides stage guidance, objection handling, competitive positioning, and closing tactics inside the partner's own workspace (CRM, Slack, Teams, email).</li>
-      <li><strong>The cost of un-coached partner sellers</strong>: partner-sourced deals historically close at lower rates than direct deals because partner sellers haven't had access to the structured coaching their direct counterparts get weekly.</li>
-      <li><strong>The data</strong>: AI coaching tools improve win rates by <strong>34% within six months</strong> (Whatfix), and structured coaching delivers <strong>32% higher win rates and 28% higher quota attainment</strong> (Korn Ferry).</li>
-      <li><strong>Introw's approach</strong>: a coach in every partner deal, with persona-specific guidance per partner type (SI, reseller, referral), embedded in the partner's actual workspace.</li>
-      <li><strong>Stakeholders</strong>: Partner Sellers, Channel Account Managers/PDMs, Channel Enablement, Channel Leadership, end customers.</li>
-    </ul>
-  </aside>
 <h2 id="what-is-ai-deal-coaching-for-channel-partners">What is AI deal coaching for channel partners?</h2>
 <p><strong>AI deal coaching for channel partners is an in-deal advisory model where an AI agent provides real-time, contextual sales coaching inside the partner's own workspace — pulling live deal context (stage, last activity, recent objections, competitive mentions) and delivering segment-specific guidance for SIs, resellers, referral partners, and other partner types.</strong> It scales the coaching that direct sales teams have always received to the partner sales motion, where it has historically been impossible to deliver because of the math of human-driven coaching at scale.</p>
 <h2 id="the-historical-weak-spot-of-every-channel-motion">The historical weak spot of every channel motion</h2>
@@ -112,6 +107,16 @@
 <p>Sales coaching has always been the differentiator between average sellers and great ones. Every revenue org knows this; every revenue org also knows that coaching at scale is impossible with humans alone — there aren't enough good coaches in the world to give every seller the touchpoints they actually need.</p>
 <p>The agentic model breaks the constraint. A coach in every deal, deployed in the partner's actual workspace, with live deal context and segment-appropriate persona, is the operational unlock channel programs have been waiting for. It's the moment the partner sales motion stops being the under-coached side of the revenue stack.</p>
 <p>The compound effect is that the historically weak win-rate of partner-sourced deals starts to converge with — or exceed — direct. That's the architectural goal of every channel program: a partner motion that's not just additive in volume but competitive in quality. Agentic coaching is the mechanism that makes it possible without hiring an army of PDMs. For the underlying training that feeds coaching, see <a href="./05-training.html">AI partner training</a>, and for how 24/7 enablement complements deal coaching, see <a href="./06-enablement-support.html">enablement support</a>.</p>
+<aside class="key-takeaways">
+    <div class="key-takeaways-eyebrow">Key takeaways</div>
+    <ul>
+    <li><strong>Definition</strong>: AI deal coaching is an in-deal advisory model where an AI agent — segment-specific by partner type and pulling live deal context — provides stage guidance, objection handling, competitive positioning, and closing tactics inside the partner's own workspace (CRM, Slack, Teams, email).</li>
+    <li><strong>The cost of un-coached partner sellers</strong>: partner-sourced deals historically close at lower rates than direct deals because partner sellers haven't had access to the structured coaching their direct counterparts get weekly.</li>
+    <li><strong>The data</strong>: AI coaching tools improve win rates by <strong>34% within six months</strong> (Whatfix), and structured coaching delivers <strong>32% higher win rates and 28% higher quota attainment</strong> (Korn Ferry).</li>
+    <li><strong>Introw's approach</strong>: a coach in every partner deal, with persona-specific guidance per partner type (SI, reseller, referral), embedded in the partner's actual workspace.</li>
+    <li><strong>Stakeholders</strong>: Partner Sellers, Channel Account Managers/PDMs, Channel Enablement, Channel Leadership, end customers.</li>
+    </ul>
+    </aside>
 <div class="faq-section"><h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <h3 id="what-is-ai-deal-coaching">What is AI deal coaching?</h3>
 <p>AI deal coaching is a sales coaching model where an AI agent — pulling live deal context from the CRM (stage, activity history, recent objections, competitive mentions) — provides contextual, real-time advice on stage progression, objection handling, competitive positioning, and closing tactics. For channel programs, the coach runs in every partner deal and is segment-specific by partner type (SI, reseller, referral).</p>
@@ -128,7 +133,7 @@
 <h3 id="does-ai-deal-coaching-require-call-recordings-to-work">Does AI deal coaching require call recordings to work?</h3>
 <p>No — Introw's deal coaching draws context from CRM data (deal stage, activity history, notes, contacts, competitive mentions). Call recording integration enhances coaching where it's available, but the core coach functions on text-based deal context that exists in every modern CRM.</p>
 <aside class="skill-callout"><div class="skill-callout-eyebrow">Run it in Claude Code</div><h2>Get the skill</h2><p class="intro">Run this workflow in your own Claude Code terminal. Drop the SKILL.md into <code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code> — Claude triggers it on the prompts in the skill's description.</p><ul>
-<li><strong><a href="../.claude/skills/vendor-deal-coach-from-similar-wins/SKILL.md">vendor-deal-coach-from-similar-wins</a></strong> — Profiles the active partner deal, finds the most analogous past won deals, extracts the success pattern at every stage, and prescribes replication coaching grounded in evidence — not a generic playbook.</li>
+<li><strong><a href="./skills/vendor-deal-coach-from-similar-wins.html">vendor-deal-coach-from-similar-wins</a></strong> — Profiles the active partner deal, finds the most analogous past won deals, extracts the success pattern at every stage, and prescribes replication coaching grounded in evidence — not a generic playbook.</li>
 </ul></aside></div>
   </article>
     <aside class="article-toc" aria-label="Table of contents">

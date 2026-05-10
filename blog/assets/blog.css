@@ -570,10 +570,46 @@ nav.primary-nav a:hover { color: var(--ink); }
 .article-body blockquote.protip strong { color: var(--warn-deep); }
 
 /* ============================================================
-   KEY TAKEAWAYS — editorial summary card
+   TL;DR — top-of-article one-paragraph summary
+   ============================================================ */
+.tldr {
+  margin: 0 0 36px;
+  padding: 18px 22px 20px 24px;
+  background: linear-gradient(180deg, var(--accent-soft), color-mix(in srgb, var(--accent-soft) 50%, var(--bg)));
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+}
+.tldr-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.tldr-eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 18px; height: 1px;
+  background: var(--accent-tint);
+}
+.article-body .tldr p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.article-body .tldr strong { color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   KEY TAKEAWAYS — editorial summary card (bottom of article)
    ============================================================ */
 .key-takeaways {
-  margin: 0 0 44px;
+  margin: 48px 0 32px;
   padding: 26px 30px 28px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -837,6 +873,259 @@ nav.primary-nav a:hover { color: var(--ink); }
 @media (max-width: 700px) {
   .article-nav { grid-template-columns: 1fr; padding: 24px 18px 48px; }
   .article-nav-card.next { text-align: left; }
+}
+
+/* ============================================================
+   SKILL DETAIL PAGE — raw SKILL.md card with download/copy
+   ============================================================ */
+.skill-source-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 32px 72px;
+}
+.skill-source-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line-strong);
+}
+.skill-source-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 14px 12px 22px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.skill-source-filename {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.skill-source-filename svg { width: 16px; height: 16px; opacity: 0.55; }
+.skill-source-filename code {
+  background: transparent;
+  color: var(--ink);
+  padding: 0;
+  font-weight: 600;
+  font-family: inherit;
+}
+.skill-source-stats {
+  margin-left: 6px;
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-family: var(--mono);
+}
+.skill-source-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.skill-source-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s, transform 0.12s;
+}
+.skill-source-btn svg { width: 14px; height: 14px; }
+.skill-source-btn:hover {
+  background: var(--bg-deep);
+  border-color: var(--ink-faint);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+.skill-source-btn.copied {
+  background: var(--green-soft);
+  color: var(--green);
+  border-color: var(--green);
+}
+.skill-source-download {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.skill-source-download:hover {
+  background: #4338ca;
+  border-color: #4338ca;
+  color: white;
+}
+.skill-source-pre {
+  margin: 0;
+  padding: 24px 28px;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 70vh;
+  white-space: pre;
+}
+.skill-source-pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  white-space: pre;
+}
+.skill-install-hint {
+  max-width: 720px;
+  margin: 22px auto 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+.skill-install-hint code {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  background: var(--bg-deep);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+@media (max-width: 700px) {
+  .skill-source-wrap { padding: 28px 14px 48px; }
+  .skill-source-header { flex-direction: column; align-items: stretch; padding: 12px 14px; }
+  .skill-source-actions { display: flex; }
+  .skill-source-actions .skill-source-btn { flex: 1; justify-content: center; }
+  .skill-source-pre { padding: 18px 16px; font-size: 12.5px; }
+}
+
+/* ============================================================
+   SKILL PAGE — extras (reuses .article-hero + .article-body)
+   ============================================================ */
+.skill-id {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 14px 4px 6px;
+  font-size: 13px;
+}
+.skill-id-label {
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.skill-id code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink);
+  background: transparent;
+  padding: 0;
+  font-weight: 500;
+}
+
+/* Skill page body — slightly tighter than article body since most content is operational */
+.skill-body h2:first-of-type { margin-top: 0; }
+.skill-body code {
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+/* Audience badges on landing & cards */
+.audience-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.audience-vendor {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.audience-partner {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+/* Skill landing — cards (variant of .article-card) */
+.skill-grid .skill-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 22px 20px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  min-height: 220px;
+  position: relative;
+}
+.skill-grid .skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+}
+.skill-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.skill-card-id {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  background: transparent;
+  padding: 0;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+  text-align: right;
+}
+.skill-card-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.skill-card-desc {
+  margin: 0 0 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  flex-grow: 1;
 }
 
 /* ============================================================

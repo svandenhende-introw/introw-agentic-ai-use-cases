@@ -26,6 +26,7 @@
     </a>
     <nav class="primary-nav">
       <a href="./index.html">All articles</a>
+      <a href="./skills/index.html">Skills</a>
       <a href="../index.html#use-cases">Use cases</a>
       <a href="../index.html#integrations">Integrations</a>
     </nav>
@@ -67,17 +68,11 @@
 
 <div class="article-layout">
   <article class="article-body">
+    <aside class="tldr">
+      <div class="tldr-eyebrow">TL;DR</div>
+      <p>Partner recruitment has historically run on intuition and inbound applications, leaving up to half of every recruitment euro producing zero pipeline. Agentic acquisition flips the model: an AI agent reads CRM, engagement, and revenue data; extracts the patterns that correlate with top performers; and fires signal-based outbound through Clay, ABM platforms, and LinkedIn Sales Navigator. Lifting activation from 30% to 50% on the same intake yields 67% more productive partners — roughly €10M of incremental sourced ARR per 100-partner cohort.</p>
+    </aside>
 <h1 id="stop-recruiting-partners-on-vibes-how-agentic-partner-acquisition-replaces-guesswork-with-evidence">Stop Recruiting Partners on Vibes: How Agentic Partner Acquisition Replaces Guesswork With Evidence</h1>
-<aside class="key-takeaways">
-    <div class="key-takeaways-eyebrow">Key takeaways</div>
-    <ul>
-      <li><strong>Definition</strong>: Agentic partner acquisition uses AI agents connected to live CRM, engagement, and revenue data to identify lookalike partner profiles and trigger signal-based outbound — replacing intuition-driven recruitment.</li>
-      <li><strong>The cost of gut-feel recruitment</strong>: typical channel partner activation rates sit at <strong>30–50%</strong>, and unmanaged programs fall <strong>below 20%</strong> — meaning up to half of every recruitment dollar produces zero pipeline.</li>
-      <li><strong>Introw's approach</strong>: an MCP-connected agent analyzes top performers, surfaces lookalike candidates, and fires outbound through Clay, ABM platforms, and LinkedIn Sales Navigator from a single Claude or ChatGPT prompt.</li>
-      <li><strong>Headline outcome</strong>: lifting activation from 30% to 50% on the same intake yields <strong>67% more productive partners</strong> — roughly €10M of incremental sourced ARR per 100-partner cohort.</li>
-      <li><strong>Stakeholders</strong>: Channel Chiefs, Partner Recruiters, RevOps, Finance — and the existing high-performing partner base.</li>
-    </ul>
-  </aside>
 <h2 id="what-is-agentic-partner-acquisition">What is agentic partner acquisition?</h2>
 <p><strong>Agentic partner acquisition is a recruitment model in which an AI agent — connected to a vendor's CRM, partner engagement data, and revenue records — identifies the patterns that correlate with high-performing partners and uses those patterns to source, qualify, and engage lookalike candidates automatically.</strong> Unlike traditional partner recruitment, which relies on inbound applications, competitor lists, and the intuition of a channel manager, agentic acquisition is grounded in live data and executes through MCP-connected tools the team already uses.</p>
 <h2 id="the-recruitment-problem-nobody-talks-about">The recruitment problem nobody talks about</h2>
@@ -109,6 +104,16 @@
 <p>Partner acquisition has historically been the least instrumented part of the channel motion. Onboarding has dashboards. Pipeline has forecasting. Even MDF has ROI scorecards. But recruitment has been a black box where someone scrolled LinkedIn and sent some emails.</p>
 <p>Agentic acquisition changes the operating model. <strong>Recruitment becomes a continuous background workflow</strong> — agents are always scanning, always proposing lookalikes, always running outbound sequences against signal — instead of a quarterly campaign. The partner program stops being shaped by who happened to apply and starts being shaped by who the data says will succeed.</p>
 <p>That's the difference between hoping your channel grows and engineering it. For what happens <em>after</em> you recruit the right partners, see the <a href="./03-onboarding.html">agentic onboarding deep-dive</a> and the <a href="./02-partner-segmentation.html">partner segmentation playbook</a>.</p>
+<aside class="key-takeaways">
+    <div class="key-takeaways-eyebrow">Key takeaways</div>
+    <ul>
+    <li><strong>Definition</strong>: Agentic partner acquisition uses AI agents connected to live CRM, engagement, and revenue data to identify lookalike partner profiles and trigger signal-based outbound — replacing intuition-driven recruitment.</li>
+    <li><strong>The cost of gut-feel recruitment</strong>: typical channel partner activation rates sit at <strong>30–50%</strong>, and unmanaged programs fall <strong>below 20%</strong> — meaning up to half of every recruitment dollar produces zero pipeline.</li>
+    <li><strong>Introw's approach</strong>: an MCP-connected agent analyzes top performers, surfaces lookalike candidates, and fires outbound through Clay, ABM platforms, and LinkedIn Sales Navigator from a single Claude or ChatGPT prompt.</li>
+    <li><strong>Headline outcome</strong>: lifting activation from 30% to 50% on the same intake yields <strong>67% more productive partners</strong> — roughly €10M of incremental sourced ARR per 100-partner cohort.</li>
+    <li><strong>Stakeholders</strong>: Channel Chiefs, Partner Recruiters, RevOps, Finance — and the existing high-performing partner base.</li>
+    </ul>
+    </aside>
 <div class="faq-section"><h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <h3 id="what-is-a-lookalike-partner-profile">What is a lookalike partner profile?</h3>
 <p>A lookalike partner profile is a data-derived pattern that describes the attributes shared by a vendor's highest-performing partners — including geography, vertical focus, technology stack, headcount band, sales cycle compatibility, and customer ICP overlap. Channel teams use lookalike profiles to recruit new partners who resemble existing top performers, replacing intuition-driven targeting with evidence-based selection.</p>
@@ -125,7 +130,7 @@
 <h3 id="what-channel-tools-does-introw-integrate-with-for-partner-acquisition">What channel tools does Introw integrate with for partner acquisition?</h3>
 <p>Introw connects via the Model Context Protocol (MCP) to standard channel and revenue tools including Salesforce, HubSpot, Clay, LinkedIn Sales Navigator, Slack, Microsoft Teams, and major ABM platforms. The agent reads from and writes to these tools so partner managers can run the entire recruitment workflow from inside Claude, ChatGPT, Slack, or their CRM of choice.</p>
 <aside class="skill-callout"><div class="skill-callout-eyebrow">Run it in Claude Code</div><h2>Get the skill</h2><p class="intro">Run this workflow in your own Claude Code terminal. Drop the SKILL.md into <code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code> — Claude triggers it on the prompts in the skill's description.</p><ul>
-<li><strong><a href="../.claude/skills/vendor-acquisition-abm-orchestrator/SKILL.md">vendor-acquisition-abm-orchestrator</a></strong> — End-to-end agentic acquisition: top-performer pattern extraction, ecosystem-gap mapping against strategic goals, lookalike sourcing, stakeholder identification, joint-value ABM messaging, and Introw Partner Portal pre-configuration.</li>
+<li><strong><a href="./skills/vendor-acquisition-abm-orchestrator.html">vendor-acquisition-abm-orchestrator</a></strong> — End-to-end agentic acquisition: top-performer pattern extraction, ecosystem-gap mapping against strategic goals, lookalike sourcing, stakeholder identification, joint-value ABM messaging, and Introw Partner Portal pre-configuration.</li>
 </ul></aside></div>
   </article>
     <aside class="article-toc" aria-label="Table of contents">

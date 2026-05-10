@@ -26,6 +26,7 @@
     </a>
     <nav class="primary-nav">
       <a href="./index.html">All articles</a>
+      <a href="./skills/index.html">Skills</a>
       <a href="../index.html#use-cases">Use cases</a>
       <a href="../index.html#integrations">Integrations</a>
     </nav>
@@ -67,17 +68,11 @@
 
 <div class="article-layout">
   <article class="article-body">
+    <aside class="tldr">
+      <div class="tldr-eyebrow">TL;DR</div>
+      <p>Forms with 7+ fields drop completion 34%; portal adoption falls below 30% when submission takes more than 2 minutes. Conversational deal registration lets partners submit through natural language in Claude, ChatGPT, Slack, email, or their own CRM — with an AI agent asking follow-up questions for missing fields and writing back to Salesforce or HubSpot. Submission collapses from 8–15 minutes to under 90 seconds, and every captured registration carries 10–15 points of additional margin via deal protection.</p>
+    </aside>
 <h1 id="90-second-deal-registrations-how-conversational-submission-kills-the-portal-tax">90-Second Deal Registrations: How Conversational Submission Kills the Portal Tax</h1>
-<aside class="key-takeaways">
-    <div class="key-takeaways-eyebrow">Key takeaways</div>
-    <ul>
-      <li><strong>Definition</strong>: Conversational deal registration is a channel partner workflow where partners submit deals through natural language (in Claude, ChatGPT, Slack, email, or their own CRM) instead of completing a long portal form, with an AI agent asking follow-up questions for missing fields and writing back to Salesforce or HubSpot automatically.</li>
-      <li><strong>The cost of portal friction</strong>: forms with <strong>7+ fields see a 34% drop in completion rates</strong>, and partner portal adoption falls below 30% when submission takes more than 2 minutes or approval exceeds 24 hours.</li>
-      <li><strong>Introw's approach</strong>: deals can be registered from any conversational interface; the agent enforces required fields, validates types, runs duplicate detection against the CRM, and attributes correctly to the right partner — all in under 90 seconds.</li>
-      <li><strong>Headline outcome</strong>: registered deals carry <strong>10–15 points of additional margin</strong> through deal protection, plus access to MDF and pre-sales support — every additional registration captured represents real margin reclaimed.</li>
-      <li><strong>Stakeholders</strong>: Partner Sellers, Channel Operations, RevOps/Sales Ops, channel leadership, end customers.</li>
-    </ul>
-  </aside>
 <h2 id="what-is-conversational-deal-registration">What is conversational deal registration?</h2>
 <p><strong>Conversational deal registration is a deal registration model in which a channel partner submits a deal by typing a natural-language description of the opportunity into Claude, ChatGPT, Slack, email, or their own CRM — and an AI agent asks follow-up questions for missing required fields, validates types, runs duplicate detection, and writes the registration back to the vendor's CRM (Salesforce or HubSpot) with correct partner attribution.</strong> It replaces the 14-field portal form that has historically been the primary friction point in channel programs.</p>
 <h2 id="the-deal-registration-friction-tax">The deal registration friction tax</h2>
@@ -108,6 +103,16 @@
 <p>Deal registration is the foundational transaction of every channel program. Get it wrong and everything downstream — channel conflict, attribution, margin protection, partner trust — degrades. Get it right and the partner program has the cleanest pipeline data in the entire revenue stack.</p>
 <p>The agentic model gets it right by removing the portal as the gating interface. The portal stops being the place partners <em>have to go</em> to register deals. It becomes one of many places they <em>can</em>. The actual submission experience is conversational, validated, and attributed automatically — wherever the partner happens to be working at the moment they have the opportunity.</p>
 <p>That's the architectural shift. Not "a better portal." A protocol-level integration of deal registration into the partner's actual workflow. The form isn't the product. The conversation is. And the result is a deal registration process that partners actually use — which is the only kind that protects margin, prevents channel conflict, and earns trust. For the approval workflow that runs after submission, see <a href="./09-approval-workflows.html">agentic approval workflows</a>.</p>
+<aside class="key-takeaways">
+    <div class="key-takeaways-eyebrow">Key takeaways</div>
+    <ul>
+    <li><strong>Definition</strong>: Conversational deal registration is a channel partner workflow where partners submit deals through natural language (in Claude, ChatGPT, Slack, email, or their own CRM) instead of completing a long portal form, with an AI agent asking follow-up questions for missing fields and writing back to Salesforce or HubSpot automatically.</li>
+    <li><strong>The cost of portal friction</strong>: forms with <strong>7+ fields see a 34% drop in completion rates</strong>, and partner portal adoption falls below 30% when submission takes more than 2 minutes or approval exceeds 24 hours.</li>
+    <li><strong>Introw's approach</strong>: deals can be registered from any conversational interface; the agent enforces required fields, validates types, runs duplicate detection against the CRM, and attributes correctly to the right partner — all in under 90 seconds.</li>
+    <li><strong>Headline outcome</strong>: registered deals carry <strong>10–15 points of additional margin</strong> through deal protection, plus access to MDF and pre-sales support — every additional registration captured represents real margin reclaimed.</li>
+    <li><strong>Stakeholders</strong>: Partner Sellers, Channel Operations, RevOps/Sales Ops, channel leadership, end customers.</li>
+    </ul>
+    </aside>
 <div class="faq-section"><h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <h3 id="what-is-deal-registration">What is deal registration?</h3>
 <p>Deal registration is a formal process where a channel partner notifies a vendor that they are actively pursuing a specific sales opportunity. Once approved, the partner receives a window of exclusivity (typically 30–90 days) during which other partners and the vendor's direct sales team cannot compete on that deal. Registered deals also typically carry 10–15 points of additional margin and access to MDF and pre-sales resources.</p>
@@ -124,9 +129,9 @@
 <h3 id="can-conversational-submission-work-for-forms-beyond-deal-registration">Can conversational submission work for forms beyond deal registration?</h3>
 <p>Yes — the same conversational interface handles partner applications, MDF project proposals, co-marketing requests, support tickets, and any other Introw form. Each form has its own required fields, validation rules, and writeback destination, but partners interact with all of them through the same natural-language conversation.</p>
 <aside class="skill-callout"><div class="skill-callout-eyebrow">Run it in Claude Code</div><h2>Get the skill</h2><p class="intro">Run this workflow in your own Claude Code terminal. Drop the SKILL.md into <code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code> — Claude triggers it on the prompts in the skill's description.</p><ul>
-<li><strong><a href="../.claude/skills/vendor-email-deal-registration-watcher/SKILL.md">vendor-email-deal-registration-watcher</a></strong> — Scans the vendor's Gmail or Outlook inbox for partner emails containing deal or lead registrations, extracts fields, deduplicates, conflict-checks, and processes through Introw — capturing off-portal submissions cleanly.</li>
-<li><strong><a href="../.claude/skills/vendor-pipeline-partner-influence-scout/SKILL.md">vendor-pipeline-partner-influence-scout</a></strong> — Scans the vendor's CRM or Excel pipeline to identify deals that would benefit most from partner influence, picks the right partner with evidence-grounded reasoning, handles registration and posts a context-rich comment on the deal.</li>
-<li><strong><a href="../.claude/skills/partner-pipeline-influence-companion/SKILL.md">partner-pipeline-influence-companion</a></strong> — Partner-side counterpart: surface accessible vendor accounts where the partner has unique influence (existing customer, vertical fit, prior similar wins) and act on them.</li>
+<li><strong><a href="./skills/vendor-email-deal-registration-watcher.html">vendor-email-deal-registration-watcher</a></strong> — Scans the vendor's Gmail or Outlook inbox for partner emails containing deal or lead registrations, extracts fields, deduplicates, conflict-checks, and processes through Introw — capturing off-portal submissions cleanly.</li>
+<li><strong><a href="./skills/vendor-pipeline-partner-influence-scout.html">vendor-pipeline-partner-influence-scout</a></strong> — Scans the vendor's CRM or Excel pipeline to identify deals that would benefit most from partner influence, picks the right partner with evidence-grounded reasoning, handles registration and posts a context-rich comment on the deal.</li>
+<li><strong><a href="./skills/partner-pipeline-influence-companion.html">partner-pipeline-influence-companion</a></strong> — Partner-side counterpart: surface accessible vendor accounts where the partner has unique influence (existing customer, vertical fit, prior similar wins) and act on them.</li>
 </ul></aside></div>
   </article>
     <aside class="article-toc" aria-label="Table of contents">
