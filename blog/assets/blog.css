@@ -1230,3 +1230,259 @@ footer.site-footer {
 @media (max-width: 700px) {
   .footer-bottom { flex-direction: column; gap: 12px; }
 }
+
+/* ============================================================
+   USE-CASE & SKILL WORKFLOW VISUALIZATIONS
+   ============================================================ */
+
+.uc-visual {
+  margin: 0 0 36px;
+  padding: 22px 24px 24px;
+  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.uc-visual::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--warn) 60%, var(--accent));
+  opacity: 0.5;
+}
+.uc-visual-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.uc-visual-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+.uc-visual-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.uc-visual-flow {
+  display: grid;
+  gap: 0;
+  align-items: stretch;
+  grid-template-columns: 1fr;
+}
+.uc-visual-flow.cols-3 {
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+}
+.uc-visual-flow.cols-4 {
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+}
+.uc-visual-flow.cols-5 {
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+}
+
+.uc-visual-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.uc-visual-stage-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.uc-visual-node {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px 14px;
+  box-shadow: var(--shadow-sm);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.uc-visual-node::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: -1px;
+  width: 4px; height: calc(100% + 2px);
+  border-radius: 10px 0 0 10px;
+  background: var(--node-color, var(--ink-faint));
+}
+.uc-visual-node--trigger { --node-color: #10b981; }
+.uc-visual-node--agent { --node-color: var(--accent); }
+.uc-visual-node--system { --node-color: var(--ink-faint); }
+.uc-visual-node--decision { --node-color: #ec4899; }
+.uc-visual-node--human { --node-color: var(--warn); }
+.uc-visual-node--outcome { --node-color: #7c3aed; }
+
+.uc-visual-node-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.uc-visual-node-desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.uc-visual-node-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.uc-visual-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  color: var(--ink-faint);
+  font-size: 22px;
+  font-weight: 200;
+  align-self: stretch;
+  font-family: var(--sans);
+  line-height: 1;
+}
+
+/* Tool pills — small branded badges with brand-color dot */
+.tool-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  padding: 3px 7px 3px 6px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  font-family: var(--sans);
+}
+.tool-pill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tool-color, var(--ink-faint));
+  flex-shrink: 0;
+}
+.tool-pill--introw,
+.tool-pill--introw-connect { --tool-color: #4f46e5; }
+.tool-pill--crossbeam,
+.tool-pill--reveal { --tool-color: #00bfa5; }
+.tool-pill--salesforce { --tool-color: #00a1e0; }
+.tool-pill--hubspot { --tool-color: #ff7a59; }
+.tool-pill--slack { --tool-color: #4a154b; }
+.tool-pill--teams { --tool-color: #6264a7; }
+.tool-pill--gmail { --tool-color: #ea4335; }
+.tool-pill--outlook { --tool-color: #0078d4; }
+.tool-pill--notion { --tool-color: #000000; }
+.tool-pill--confluence { --tool-color: #172b4d; }
+.tool-pill--gong { --tool-color: #6f2da8; }
+.tool-pill--chorus { --tool-color: #00c7b7; }
+.tool-pill--otter { --tool-color: #673ab7; }
+.tool-pill--fathom { --tool-color: #0066ff; }
+.tool-pill--grain { --tool-color: #ed8044; }
+.tool-pill--linkedin { --tool-color: #0a66c2; }
+.tool-pill--clay { --tool-color: #d9c83a; }
+.tool-pill--zoom { --tool-color: #2d8cff; }
+.tool-pill--loom { --tool-color: #625df5; }
+.tool-pill--asana { --tool-color: #f06a6a; }
+.tool-pill--linear { --tool-color: #5e6ad2; }
+.tool-pill--monday { --tool-color: #ff5447; }
+.tool-pill--box { --tool-color: #0061d5; }
+.tool-pill--gdrive { --tool-color: #4285f4; }
+.tool-pill--canva { --tool-color: #00c4cc; }
+.tool-pill--intercom { --tool-color: #0075ff; }
+.tool-pill--zoominfo { --tool-color: #4288f0; }
+.tool-pill--apollo { --tool-color: #4f46e5; }
+.tool-pill--claude { --tool-color: #cc785c; }
+.tool-pill--chatgpt { --tool-color: #10a37f; }
+.tool-pill--mdf { --tool-color: #f59e0b; }
+.tool-pill--erp { --tool-color: #64748b; }
+.tool-pill--finance { --tool-color: #64748b; }
+.tool-pill--portal { --tool-color: #4f46e5; }
+
+.uc-visual-footer {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+.uc-visual-footer-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Compact variant for skill detail pages */
+.uc-visual.uc-visual--compact {
+  padding: 18px 20px 20px;
+  margin: 0 0 28px;
+}
+.uc-visual.uc-visual--compact .uc-visual-title {
+  font-size: 15px;
+}
+.uc-visual.uc-visual--compact .uc-visual-node {
+  padding: 10px 12px 12px;
+}
+.uc-visual.uc-visual--compact .uc-visual-node-title {
+  font-size: 13px;
+}
+
+@media (max-width: 880px) {
+  .uc-visual-flow,
+  .uc-visual-flow.cols-3,
+  .uc-visual-flow.cols-4,
+  .uc-visual-flow.cols-5 {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .uc-visual-arrow {
+    transform: rotate(90deg);
+    padding: 6px 0;
+    align-self: center;
+  }
+}
+
+/* Skill detail page — visual section wrapper */
+.skill-visual-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 700px) {
+  .skill-visual-wrap { padding: 0 14px; }
+}

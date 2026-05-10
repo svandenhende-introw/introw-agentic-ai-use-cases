@@ -12,6 +12,10 @@ from pathlib import Path
 
 import markdown
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from visuals import render_skill_visual
+
 ROOT = Path(__file__).resolve().parent.parent.parent
 SKILLS_SRC = ROOT / ".claude" / "skills"
 SKILLS_OUT = ROOT / "blog" / "skills"
@@ -320,6 +324,13 @@ def build_skill_page(skill_dir: Path):
             '    </div>\n'
         )
 
+    visual_html = render_skill_visual(name)
+    visual_section = (
+        f'<section class="skill-visual-wrap">\n'
+        f'  <div class="skill-visual-inner">\n{visual_html}\n  </div>\n'
+        f'</section>'
+    ) if visual_html else ""
+
     page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -358,6 +369,8 @@ def build_skill_page(skill_dir: Path):
     <p class="lead">{html_lib.escape(description)}</p>
 {persona_html}  </div>
 </section>
+
+{visual_section}
 
 <main class="skill-source-wrap">
   <div class="skill-source-card">
