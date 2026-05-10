@@ -1072,6 +1072,64 @@ nav.primary-nav a:hover { color: var(--ink); }
   color: var(--green);
 }
 
+/* Persona pills — who runs this skill */
+.persona-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
+}
+.persona-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--bg-deep);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: 1px solid var(--line);
+}
+
+/* Skill card — persona pills row spans full width above CTA */
+.skill-grid .skill-card .persona-badges {
+  margin: 0 0 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+
+/* Skill detail hero — labelled "Built for" row */
+.persona-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.persona-row-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+/* Skill landing — always 2-up; odd last card spans full width */
+.article-grid.skill-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.article-grid.skill-grid > .skill-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+@media (max-width: 880px) {
+  .article-grid.skill-grid { grid-template-columns: 1fr; }
+  .article-grid.skill-grid > .skill-card:last-child:nth-child(odd) { grid-column: auto; }
+}
+
 /* Skill landing — cards (variant of .article-card) */
 .skill-grid .skill-card {
   display: flex;

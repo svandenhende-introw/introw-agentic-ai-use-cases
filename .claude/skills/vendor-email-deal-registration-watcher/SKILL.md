@@ -8,6 +8,18 @@ description: Use when a Channel Ops, RevOps, or PDM user wants to scan the vendo
 **Audience**: Vendor — **claude.ai Introw** MCP + Gmail / Outlook MCP (whichever is installed for the vendor's mailbox).
 **Use case**: 08 — Deal Registration.
 
+## When to use this skill
+
+Use when a Channel Ops, RevOps, or PDM user wants to scan the vendor's Gmail or Outlook inbox for partner emails containing deal or lead registrations — auto-extract fields, validate, deduplicate against the CRM, and process the registration through Introw.
+
+**Sample prompts that fire this skill:**
+- "scan inbox for deal regs"
+- "process partner emails"
+- "watch inbox for registrations"
+- "auto-process deal regs from email"
+- "find off-portal deal regs"
+- "convert email registrations"
+
 ## Why this matters
 Deal registration is the foundational transaction of every channel program — but **forms with 7+ fields drop completion 34%** (Computer Market Research), and partner portal adoption falls below 30% when submission takes >2 minutes or approval exceeds 24h. The result: partners email AEs and channel ops directly with deal registrations, creating off-portal submissions that become Salesforce data hygiene projects, attribution gaps, and channel conflict. This skill flips that pattern — instead of forcing partners back into a portal, it **harvests the email submissions they already send** and processes them cleanly through Introw with proper attribution.
 

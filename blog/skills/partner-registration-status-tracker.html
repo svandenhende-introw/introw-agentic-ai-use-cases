@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross-Vendor Registration Status Tracker (Partner) — Introw Skill</title>
+<meta name="description" content="Use when a partner wants a single view of every deal/lead registration they have outstanding across all vendors — pending approval, approved, in conflict, approaching protection-window expiry — sorted by urgency and recommended action. Trigger phrases include &quot;all my registration">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <img class="brand-logo" src="https://assets.introw.io/introw-logo-square.png" alt="Introw" loading="eager">
+      Introw <span class="brand-suffix">/ skills</span>
+    </a>
+    <nav class="primary-nav">
+      <a href="../index.html">All articles</a>
+      <a href="./index.html">All skills</a>
+      <a href="../../index.html#integrations">Integrations</a>
+    </nav>
+    <a href="../../index.html" class="header-cta">
+      Back to Introw
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+
+<section class="article-hero">
+  <div class="article-hero-bg"></div>
+  <div class="article-hero-inner">
+    <a href="./index.html" class="breadcrumb">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      All skills
+    </a>
+    <div class="article-hero-eyebrow">
+      <span class="uc-num">Claude Code skill</span>
+      <span class="dot"></span>
+      <span>Partner · <a href="../08-deal-registration.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-tint);">Use case 08: Deal Registration</a></span>
+    </div>
+    <h1>Cross-Vendor Registration Status Tracker (Partner)</h1>
+    <div class="skill-id">
+      <span class="skill-id-label">Skill ID</span>
+      <code>partner-registration-status-tracker</code>
+    </div>
+    <p class="lead">Use when a partner wants a single view of every deal/lead registration they have outstanding across all vendors — pending approval, approved, in conflict, approaching protection-window expiry — sorted by urgency and recommended action. Trigger phrases include &quot;all my registrations&quot;, &quot;what&#x27;s pending approval&quot;, &quot;deal regs across vendors&quot;, &quot;protection windows expiring&quot;, &quot;registrations in conflict&quot;, &quot;registration status&quot;.</p>
+    <div class="persona-row">
+      <span class="persona-row-label">Built for</span>
+      <div class="persona-badges"><span class="persona-badge">Partner Ops</span><span class="persona-badge">Partner Manager</span></div>
+    </div>
+  </div>
+</section>
+
+<main class="skill-source-wrap">
+  <div class="skill-source-card">
+    <div class="skill-source-header">
+      <div class="skill-source-filename">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <code>SKILL.md</code>
+        <span class="skill-source-stats">91 lines · 923 words</span>
+      </div>
+      <div class="skill-source-actions">
+        <button type="button" class="skill-source-btn skill-source-copy" data-target="skill-md-partner-registration-status-tracker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span>Copy</span>
+        </button>
+        <a class="skill-source-btn skill-source-download" href="../../.claude/skills/partner-registration-status-tracker/SKILL.md" download="partner-registration-status-tracker.md">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download SKILL.md</span>
+        </a>
+      </div>
+    </div>
+    <pre class="skill-source-pre"><code id="skill-md-partner-registration-status-tracker">---
+name: partner-registration-status-tracker
+description: Use when a partner wants a single view of every deal/lead registration they have outstanding across all vendors — pending approval, approved, in conflict, approaching protection-window expiry — sorted by urgency and recommended action. Trigger phrases include &quot;all my registrations&quot;, &quot;what&#x27;s pending approval&quot;, &quot;deal regs across vendors&quot;, &quot;protection windows expiring&quot;, &quot;registrations in conflict&quot;, &quot;registration status&quot;.
+---
+
+# Cross-Vendor Registration Status Tracker (Partner)
+
+**Audience**: Partner user — uses **claude.ai Introw Connect Staging** MCP across **all portals** the partner has access to.
+**Use case**: 08 — Deal Registration (partner-side, multi-vendor).
+
+## When to use this skill
+
+Use when a partner wants a single view of every deal/lead registration they have outstanding across all vendors — pending approval, approved, in conflict, approaching protection-window expiry — sorted by urgency and recommended action.
+
+**Sample prompts that fire this skill:**
+- &quot;all my registrations&quot;
+- &quot;what&#x27;s pending approval&quot;
+- &quot;deal regs across vendors&quot;
+- &quot;protection windows expiring&quot;
+- &quot;registrations in conflict&quot;
+- &quot;registration status&quot;
+
+## Why this matters
+Partners with active pipelines across 5+ vendors often have 20–50 registrations in flight at any given moment — pending approvals, approved-but-aging, in-conflict, sitting on the edge of protection-window expiry. Each vendor&#x27;s portal shows you *its* slice. Nobody shows you the unified view.
+
+The cost of missing one is significant: a protection window expiring on a deal-in-flight strips 10–15 points of margin off the eventual close. A conflict left unresolved for two weeks degrades vendor trust on every future registration. This skill makes the whole queue visible in one place, sorted by urgency, with recommended action per item.
+
+## Process
+
+### Step 1 — Enumerate vendor portals
+- `Introw_Connect_Staging:partners` — get all portals.
+
+### Step 2 — Pull registration state per portal
+For each `roomId`:
+- `Introw_Connect_Staging:search_form_submissions` — all registrations in trailing 6–12 months, with status.
+- `Introw_Connect_Staging:search_crm_objects` — corresponding deal records (stage, value, last-activity, close-date).
+- `Introw_Connect_Staging:get_tier_information` — protection-window length per tier (typically 30/60/90 days).
+
+### Step 3 — Classify each registration
+Bucket each registration:
+
+- **Pending approval** (and aging) — submitted, vendor SLA running. Flag if past stated SLA.
+- **Approved &amp; in protection window** — clean, on track. Show days remaining in window.
+- **Approved &amp; nearing window expiry** — &lt; 30 days left in protection. The most urgent class.
+- **Approved &amp; expired** — protection window closed; deal still open. Flag for re-registration request or extension ask.
+- **In conflict** — vendor flagged as conflicting with another partner or direct sales. Action: respond to vendor with evidence, or accept resolution.
+- **Rejected** — partner needs to either appeal, register correctly, or move on.
+- **Closed-won** — confirm commission attribution is correct (cross-check `search_commissions`).
+- **Closed-lost** — opportunity to log lessons; close cleanly.
+
+### Step 4 — Surface urgency
+Sort across all portals by urgency:
+- **Red**: protection expiring &lt; 7 days on an active deal; in-conflict registrations sitting &gt; 48 hours; pending approvals past SLA.
+- **Yellow**: protection expiring 7–30 days; approvals approaching SLA; aging post-approval with no deal activity.
+- **Green**: clean, on track.
+
+### Step 5 — Recommend action per item
+For each non-green item:
+
+- **Pending past SLA** → CAM ping, drafted message included.
+- **Protection expiring soon, deal still open** → choose: (a) register protection extension, (b) accelerate close, (c) accept loss of protection. Surface the trade-off.
+- **In conflict** → review the conflict, gather evidence (existing customer relationship, prior similar wins), draft response.
+- **Rejected, recoverable** → draft the corrected resubmission.
+- **Closed-won with attribution issues** → flag for finance/CAM follow-up.
+
+### Step 6 — Surface aggregate insight
+- **Approval velocity by vendor** — which vendors are slow vs. fast (informs future routing).
+- **Conflict frequency by vendor** — which vendors have RoE issues.
+- **Win rate by vendor** — which registrations actually close.
+
+These are partner-internal insights, not for the QBR adversarially — just for the partner&#x27;s own routing decisions.
+
+## Output format
+- **Status dashboard across vendors** — table with vendor, account, value, status, urgency, action.
+- **Action queue** — sorted red → yellow, with recommended next move per item.
+- **Drafted CAM pings** for SLA-breached approvals — copy-pasteable per vendor.
+- **Drafted conflict responses** with evidence outline.
+- **Aggregate insight** — vendor-by-vendor approval velocity, conflict rate, win rate.
+
+## Guardrails &amp; PRM best practice
+- **Strictly scoped per portal.** Each registration&#x27;s data is fetched only with that vendor&#x27;s `roomId`. No cross-portal data leakage in the responses sent back to vendors.
+- **Don&#x27;t submit vendor-confidential data into another vendor&#x27;s portal.** Cross-vendor analysis happens locally; the partner&#x27;s CAM pings to Vendor X never reference Vendor Y&#x27;s data.
+- **Conflict responses must be evidence-grounded.** Don&#x27;t draft a conflict appeal that overclaims partner equity in an account. Surface the evidence honestly; let the partner decide what to argue.
+- **Protection-window honesty.** Some vendors don&#x27;t extend protection windows beyond the original term. Surface the policy if known; don&#x27;t promise an extension that isn&#x27;t policy.
+- **Re-registration is rare.** If a deal already had protection that expired, re-registering is generally not allowed. Surface the right ask — extension, exception, or accept loss of protection.
+- **Closed-won attribution.** When attribution looks off, draft the inquiry to vendor finance/CAM with the specifics (deal ID, expected commission, actual commission). Don&#x27;t escalate before checking the data.
+- **Don&#x27;t auto-act.** Surface action; partner submits.
+- **Capture every CAM ping** via `Introw_Connect_Staging:add_comment` on the relevant registration record so the trail exists for future audits.
+- **Run on cadence.** Weekly default; daily during heavy-pipeline quarters. Daily-discovered issues are 10× cheaper to resolve than QBR-discovered ones.
+- **Cross-skill handoff.** Stalled approved registrations → `partner-deal-war-room` to coach the deal forward. Conflicts that can&#x27;t be resolved → escalate to vendor channel ops via `partner-helpdesk` or direct CAM.
+</code></pre>
+  </div>
+  <p class="skill-install-hint">
+    Drop this file into <code>.claude/skills/partner-registration-status-tracker/SKILL.md</code> in your repo. Claude Code triggers the skill on the prompts described in the <code>description</code> field.
+  </p>
+</main>
+
+<script>
+  (function() {
+    var btns = document.querySelectorAll('.skill-source-copy');
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var target = document.getElementById(btn.dataset.target);
+        if (!target) return;
+        var text = target.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+          var label = btn.querySelector('span');
+          var prev = label.textContent;
+          label.textContent = 'Copied';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            label.textContent = prev;
+            btn.classList.remove('copied');
+          }, 1600);
+        });
+      });
+    });
+  })();
+</script>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Introw</div>
+        <div class="footer-tagline">Headless PRM, connected to your CRM. Beyond the portal — into the tools your team and partners already use.</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">All articles</a>
+        <a href="./index.html">All skills</a>
+        <a href="../../index.html#use-cases">Use cases</a>
+        <a href="../../index.html#integrations">Integrations</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Introw — Agentic PRM</div>
+      <div>Built for partner teams who'd rather build than configure portals.</div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

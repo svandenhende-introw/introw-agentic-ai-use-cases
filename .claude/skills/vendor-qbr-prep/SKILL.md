@@ -8,6 +8,19 @@ description: Use when a PDM, CAM, or Channel Chief wants to prepare a Quarterly 
 **Audience**: Vendor — **claude.ai Introw** MCP.
 **Use case**: 12 — QBRs / Meeting Prep.
 
+## When to use this skill
+
+Use when a PDM, CAM, or Channel Chief wants to prepare a Quarterly Business Review (or MBR / WBR) — instantly assembling pipeline, goals, activity, engagement, commissions, MAP status, and a recommended agenda for one partner OR running a 100% coverage sweep across the entire partner book.
+
+**Sample prompts that fire this skill:**
+- "prep QBR for [partner]"
+- "generate this quarter's QBRs"
+- "QBR sweep across the book"
+- "MBR / WBR prep"
+- "100% QBR coverage"
+- "ready every partner review"
+- "quarterly business review preparation"
+
 ## Why this matters
 PDMs spend **2–4 hours per QBR** on manual data assembly. A 30-partner book × 4 quarterly reviews = **240–480 hours/year per PDM** of mechanical prep — before the actual meeting, follow-up, or strategic conversation. The honest reality: most programs only achieve **20–30% real QBR coverage** because the prep math makes 100% impossible. Top-tier partners get full reviews, mid-tier get half-baked versions, and the long tail gets a check-in email.
 

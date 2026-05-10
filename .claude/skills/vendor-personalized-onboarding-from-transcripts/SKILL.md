@@ -8,6 +8,17 @@ description: Use when a CAM, PDM, or Channel Ops user wants to spin up a persona
 **Audience**: Vendor — **claude.ai Introw** MCP (+ optional transcript MCP: Otter, Fathom, Gong, Read.ai, Granola, or transcript pasted into the conversation).
 **Use case**: 03 — Onboarding.
 
+## When to use this skill
+
+Use when a CAM, PDM, or Channel Ops user wants to spin up a personalized onboarding plan for a new partner — using meeting transcripts (kickoff calls, intro meetings, partnership-fit conversations) plus existing partner context, then assigning every task with owner + due date in Introw and managing the project headlessly.
+
+**Sample prompts that fire this skill:**
+- "set up onboarding for [partner]"
+- "personalized onboarding plan"
+- "build onboarding from this transcript"
+- "onboard [partner] based on our kickoff call"
+- "headless onboarding project"
+
 ## Why this matters
 Without structured onboarding, average channel partner time-to-productivity is **6–12 months** (Magentrix); structured programs compress this to **60–90 days**. Partners who close their first deal within 90 days are **3–4× more likely** to remain active at one year (Unifyr Channel Atlas). The first 90 days set the partner's belief about what working with this vendor *feels like*. A CAM responsible for 30 partners typically spends **6–8 hours/week** on routine onboarding chasing — **300–400 hours/year** that should be redirected to relationship work, not reminder-bot duty.
 

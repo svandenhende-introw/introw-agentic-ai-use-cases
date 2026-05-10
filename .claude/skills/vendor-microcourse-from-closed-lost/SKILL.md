@@ -8,6 +8,18 @@ description: Use when a Partner Enablement lead, Channel Chief, or RevOps user w
 **Audience**: Vendor — **claude.ai Introw** MCP.
 **Use case**: 05 — Training.
 
+## When to use this skill
+
+Use when a Partner Enablement lead, Channel Chief, or RevOps user wants to detect patterns in closed-lost partner deals — clustering by lost-reason and customer context — and generate / suggest targeted micro-courses that address the specific gaps the losses reveal.
+
+**Sample prompts that fire this skill:**
+- "what are we losing on"
+- "closed-lost patterns"
+- "training from losses"
+- "micro-courses from lost deals"
+- "what should we train on next"
+- "closed-lost driven enablement"
+
 ## Why this matters
 Up to **70% of training content is forgotten within 24 hours, 87% within a week** without reinforcement (Ebbinghaus / industry consensus). Static training catalogs accumulate content nobody uses while real, current losses go un-addressed. The signal that matters most: **partners losing deals tells you exactly what they need to learn**.
 

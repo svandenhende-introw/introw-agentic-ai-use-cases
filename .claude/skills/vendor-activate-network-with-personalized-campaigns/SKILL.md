@@ -8,6 +8,18 @@ description: Use when a Channel Chief, PDM, RevOps, or Channel Ops user wants to
 **Audience**: Vendor — **claude.ai Introw** MCP.
 **Use case**: 04 — Activation.
 
+## When to use this skill
+
+Use when a Channel Chief, PDM, RevOps, or Channel Ops user wants to run a full activation sweep across the entire partner network — auditing every partner against their goals, identifying who needs activation, and generating per-partner personalized activation campaigns whose messaging maps to each partner's specific goals and gap.
+
+**Sample prompts that fire this skill:**
+- "activate the network"
+- "who needs activation"
+- "personalized activation campaigns"
+- "audit and activate"
+- "partner activation sweep"
+- "fix the long tail"
+
 ## Why this matters
 Industry baseline activation: **30–50%** for managed programs, **below 20%** unmanaged. Half or more of every recruitment dollar produces zero pipeline because partners drift through onboarding without registering deals — and nobody notices until quarterly reporting. Lifting activation 30% → 50% on the same intake = **67% more productive partners** ≈ **€10M incremental sourced ARR per 100-partner cohort**. Reactivation after disengagement is dramatically more expensive than catching the drop-off early — re-engagement flows can lift dormant activity from ~4% to 12% (ReferralCandy), but prevention beats reactivation by an order of magnitude.
 

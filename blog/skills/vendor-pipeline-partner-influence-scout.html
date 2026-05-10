@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pipeline Partner-Influence Scout (Vendor) — Introw Skill</title>
-<meta name="description" content="Use when a Channel Chief, RevOps, PDM, or AE wants to scan the vendor&#x27;s CRM (or an Excel pipeline export) to identify which open deals or accounts would benefit most from partner influence — determine which specific partner should be brought in and why — then handle the registrat">
+<meta name="description" content="Use when a Channel Chief, RevOps, PDM, or AE wants to scan the vendor&#x27;s CRM (or Excel pipeline) to identify open deals or direct-sales accounts that would benefit most from partner influence — including direct-deal rescue scenarios where Crossbeam shows a partner already has the ">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,11 @@
       <span class="skill-id-label">Skill ID</span>
       <code>vendor-pipeline-partner-influence-scout</code>
     </div>
-    <p class="lead">Use when a Channel Chief, RevOps, PDM, or AE wants to scan the vendor&#x27;s CRM (or an Excel pipeline export) to identify which open deals or accounts would benefit most from partner influence — determine which specific partner should be brought in and why — then handle the registration / co-sell flagging and post a context-rich comment on the deal. Trigger phrases include &quot;which deals need a partner&quot;, &quot;find partner-influence opportunities&quot;, &quot;who should we bring into deal X&quot;, &quot;scout partner co-sell&quot;, &quot;match partners to pipeline&quot;, &quot;Excel pipeline + partner match&quot;.</p>
+    <p class="lead">Use when a Channel Chief, RevOps, PDM, or AE wants to scan the vendor&#x27;s CRM (or Excel pipeline) to identify open deals or direct-sales accounts that would benefit most from partner influence — including direct-deal rescue scenarios where Crossbeam shows a partner already has the customer relationship — then handle the registration / co-sell flagging and post a context-rich comment on the deal. Trigger phrases include &quot;which deals need a partner&quot;, &quot;find partner-influence opportunities&quot;, &quot;who should we bring into deal X&quot;, &quot;scout partner co-sell&quot;, &quot;match partners to pipeline&quot;, &quot;Excel pipeline + partner match&quot;, &quot;Crossbeam direct-deal rescue&quot;, &quot;partner has the customer at this account&quot;, &quot;use Crossbeam overlap to rescue deals&quot;, &quot;find partners that already serve customers in our pipeline&quot;.</p>
+    <div class="persona-row">
+      <span class="persona-row-label">Built for</span>
+      <div class="persona-badges"><span class="persona-badge">Channel Chief</span><span class="persona-badge">RevOps</span><span class="persona-badge">AE</span></div>
+    </div>
   </div>
 </section>
 
@@ -60,7 +64,7 @@
       <div class="skill-source-filename">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         <code>SKILL.md</code>
-        <span class="skill-source-stats">94 lines · 1172 words</span>
+        <span class="skill-source-stats">121 lines · 1686 words</span>
       </div>
       <div class="skill-source-actions">
         <button type="button" class="skill-source-btn skill-source-copy" data-target="skill-md-vendor-pipeline-partner-influence-scout">
@@ -75,18 +79,36 @@
     </div>
     <pre class="skill-source-pre"><code id="skill-md-vendor-pipeline-partner-influence-scout">---
 name: vendor-pipeline-partner-influence-scout
-description: Use when a Channel Chief, RevOps, PDM, or AE wants to scan the vendor&#x27;s CRM (or an Excel pipeline export) to identify which open deals or accounts would benefit most from partner influence — determine which specific partner should be brought in and why — then handle the registration / co-sell flagging and post a context-rich comment on the deal. Trigger phrases include &quot;which deals need a partner&quot;, &quot;find partner-influence opportunities&quot;, &quot;who should we bring into deal X&quot;, &quot;scout partner co-sell&quot;, &quot;match partners to pipeline&quot;, &quot;Excel pipeline + partner match&quot;.
+description: Use when a Channel Chief, RevOps, PDM, or AE wants to scan the vendor&#x27;s CRM (or Excel pipeline) to identify open deals or direct-sales accounts that would benefit most from partner influence — including direct-deal rescue scenarios where Crossbeam shows a partner already has the customer relationship — then handle the registration / co-sell flagging and post a context-rich comment on the deal. Trigger phrases include &quot;which deals need a partner&quot;, &quot;find partner-influence opportunities&quot;, &quot;who should we bring into deal X&quot;, &quot;scout partner co-sell&quot;, &quot;match partners to pipeline&quot;, &quot;Excel pipeline + partner match&quot;, &quot;Crossbeam direct-deal rescue&quot;, &quot;partner has the customer at this account&quot;, &quot;use Crossbeam overlap to rescue deals&quot;, &quot;find partners that already serve customers in our pipeline&quot;.
 ---
 
 # Pipeline Partner-Influence Scout (Vendor)
 
-**Audience**: Vendor — **claude.ai Introw** MCP (+ optional Read for Excel exports if pipeline lives in spreadsheets, optional Salesforce/HubSpot MCPs).
+**Audience**: Vendor — **claude.ai Introw** MCP + **optional claude.ai Crossbeam** MCP (+ optional Read for Excel exports if pipeline lives in spreadsheets, optional Salesforce/HubSpot MCPs).
 **Use case**: 08 — Deal Registration (proactive vendor-driven side; complementary to `partner-register-deal` and `vendor-email-deal-registration-watcher`).
+
+## When to use this skill
+
+Use when a Channel Chief, RevOps, PDM, or AE wants to scan the vendor&#x27;s CRM (or Excel pipeline) to identify open deals or direct-sales accounts that would benefit most from partner influence — including direct-deal rescue scenarios where Crossbeam shows a partner already has the customer relationship — then handle the registration / co-sell flagging and post a context-rich comment on the deal.
+
+**Sample prompts that fire this skill:**
+- &quot;which deals need a partner&quot;
+- &quot;find partner-influence opportunities&quot;
+- &quot;who should we bring into deal X&quot;
+- &quot;scout partner co-sell&quot;
+- &quot;match partners to pipeline&quot;
+- &quot;Excel pipeline + partner match&quot;
+- &quot;Crossbeam direct-deal rescue&quot;
+- &quot;partner has the customer at this account&quot;
+- &quot;use Crossbeam overlap to rescue deals&quot;
+- &quot;find partners that already serve customers in our pipeline&quot;
 
 ## Why this matters
 Most channel programs are reactive on registration — they wait for partners to submit. But ~35% partner-led revenue uplift (Computer Market Research) compounds further when the vendor proactively *places* partners on deals where partner influence improves the outcome: complex implementations, vertical-specific motions, geographic proximity, services attach, existing-customer relationships. This skill scans the pipeline, identifies high-leverage partner-influence opportunities, and handles the registration mechanics — including a context-rich comment that explains *why this partner on this deal*.
 
-The complementary partner-side skill is `partner-pipeline-influence-companion`, which lets a partner see the same view from their side.
+**The direct-deal rescue scenario** is the highest-ROI version of this workflow and the primary reason channel teams care about Ecosystem-Led Growth: when a deal is sitting in *direct sales* and Crossbeam shows that one of the vendor&#x27;s partners already has an active customer relationship at the prospect, registering with that partner converts a cold direct pursuit into a warm-introduction-led motion — typically compressing sales cycle and lifting close rate. Without Crossbeam, this signal is invisible; with it, it becomes the dominant scoring factor for partner placement on direct-sales pipeline.
+
+The complementary partner-side skill is `partner-pipeline-influence-companion`, which lets a partner see the same view from their side. The proactive (target-list-first) variant — given an external account list rather than open pipeline — is `vendor-crossbeam-cosell-finder`.
 
 ## Inputs to gather first
 - **Pipeline source**: Introw / connected CRM (`search_crm_objects`), or an Excel/CSV the user provides (then Read it).
@@ -113,16 +135,19 @@ Score per deal across multiple dimensions:
 Output a priority score per deal: how much would partner influence improve the close probability, expected value, or close velocity?
 
 ### Step 3 — Match each high-leverage deal to a specific partner
-For each prioritized deal:
-- `Introw:search_partners` — filter by region, vertical, partner type, certifications relevant to the deal.
-- `Introw:search_crm_objects` — partners with **prior wins on similar customers** (vertical, deal size, products) — strongest signal.
-- `Introw:search_partner_engagement` — partners actively engaged this quarter (avoid putting deals on dormant partners).
-- `Introw:get_tier_information` — tier requirements affecting eligibility.
-- `Introw:get_goals` — partners pacing on goals where this deal would help.
+For each prioritized deal, evaluate signals in this priority order:
+
+1. **Existing customer relationship at the prospect** (Crossbeam, when MCP connected) — **the strongest possible signal.** A partner with an active customer relationship at the prospect&#x27;s account beats every other signal: warmer than vertical fit, warmer than prior similar wins, dramatically warmer than territory match. Use `Crossbeam:*` to find overlaps; weight overlap *type* (active customer &gt; active opportunity &gt; champion &gt; lapsed prospect) and *recency* (last 90 days &gt; older). Without Crossbeam, this signal isn&#x27;t directly observable — fall back to the other signals below.
+2. `Introw:search_crm_objects` — partners with **prior wins on similar customers** (vertical, deal size, products) — strongest CRM-only signal.
+3. `Introw:search_partners` — filter by region, vertical, partner type, certifications relevant to the deal.
+4. `Introw:search_partner_engagement` — partners actively engaged this quarter (avoid putting deals on dormant partners).
+5. `Introw:get_tier_information` — tier requirements affecting eligibility.
+6. `Introw:get_goals` — partners pacing on goals where this deal would help.
 
 For each candidate match, articulate the **why** in one sentence:
-- &quot;Partner X — has 3 recent closed-won deals in healthcare AI at similar deal sizes; located in same region as customer; certified on the relevant product.&quot;
-- &quot;Partner Y — already serves this customer in a different product line; cross-sell motion is the natural play.&quot;
+- &quot;Partner X — Crossbeam shows active customer relationship at Globex (3-year, expansion-eligible); located in same region; certified on the relevant product. Direct-deal rescue candidate.&quot;
+- &quot;Partner Y — has 3 recent closed-won deals in healthcare AI at similar deal sizes; located in same region as customer; certified on the relevant product.&quot;
+- &quot;Partner Z — already serves this customer in a different product line; cross-sell motion is the natural play.&quot;
 
 ### Step 4 — Conflict check
 Before flagging or registering:
@@ -165,7 +190,13 @@ For conflicted or judgment-call matches:
 - **Goal-relevance.** When two partners are equally well-matched, prefer the one whose `get_goals` shows they&#x27;re pacing toward a target this deal would help — placement is also an activation lever.
 - **Don&#x27;t poach.** If another partner already has a registration on the account, don&#x27;t override — that&#x27;s the conflict path, not the placement path.
 - **Excel mode is provisional.** Excel pipelines lack the live attribution Introw has; Excel-based matches surface for human review by default rather than auto-action.
-- **Cross-skill handoff.** Conflicts → `vendor-detect-channel-conflict`. Clean placements that need coaching → `vendor-deal-coach-from-similar-wins`. Activation lever → `vendor-activate-network-with-personalized-campaigns`.
+- **Crossbeam data has lag.** Overlap data refreshes typically run nightly or weekly; flag Crossbeam-driven matches where overlap data is &gt; 30 days old and confirm currency before recommending placement.
+- **Crossbeam respects data-sharing scope.** Only surface overlaps within authorized population groups / partner-data-sharing agreements. Never surface a partner customer&#x27;s name outside the vendor-internal scope.
+- **Cross-skill handoff.**
+  - **Proactive variant** (given an external target account list rather than open pipeline) → `vendor-crossbeam-cosell-finder` (UC02). This skill is the *reactive* version (scan pipeline → match partner); cosell-finder is the *proactive* version (given a list → find partners).
+  - Channel conflict detected → `vendor-detect-channel-conflict`.
+  - Clean placements that need coaching → `vendor-deal-coach-from-similar-wins`.
+  - Dormant partner who&#x27;d be a great match but is silent → activation lever via `vendor-activate-network-with-personalized-campaigns` before placing the deal.
 </code></pre>
   </div>
   <p class="skill-install-hint">

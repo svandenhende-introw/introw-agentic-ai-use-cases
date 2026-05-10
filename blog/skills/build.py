@@ -17,17 +17,100 @@ SKILLS_SRC = ROOT / ".claude" / "skills"
 SKILLS_OUT = ROOT / "blog" / "skills"
 LOGO_URL = "https://assets.introw.io/introw-logo-square.png"
 
+# ---- Personas served by each skill ----
+# Vendor (Introw MCP): Channel Chief, RevOps, PDM (Partner Development Manager),
+# CAM (Channel Account Manager), Channel Ops, Partner Enablement, Partner Marketing,
+# Vendor Marketing, Vendor IT, Partner Recruiter, Channel Manager, AE.
+# Partner (Introw Connect): Partner Seller, Partner Manager (of vendor relationships),
+# Partner Ops, Partner Enablement, Partner Marketing, Partner Finance, Customer Success.
+PERSONA_MAP = {
+    # Vendor
+    "vendor-acquisition-abm-orchestrator":
+        ["Channel Chief", "Partner Recruiter", "RevOps"],
+    "vendor-tier-promotion-batch-review":
+        ["Channel Chief", "RevOps", "PDM"],
+    "vendor-crossbeam-cosell-finder":
+        ["RevOps", "Channel Manager", "PDM"],
+    "vendor-personalized-onboarding-from-transcripts":
+        ["CAM", "PDM", "Channel Ops"],
+    "vendor-activate-network-with-personalized-campaigns":
+        ["Channel Chief", "PDM", "RevOps"],
+    "vendor-microcourse-from-closed-lost":
+        ["Partner Enablement", "Channel Chief", "RevOps"],
+    "vendor-support-content-gap-detector":
+        ["Partner Enablement", "Channel Ops", "Vendor IT"],
+    "vendor-content-radar":
+        ["Partner Marketing", "Vendor Marketing"],
+    "vendor-email-deal-registration-watcher":
+        ["Channel Ops", "RevOps", "PDM"],
+    "vendor-pipeline-partner-influence-scout":
+        ["Channel Chief", "RevOps", "AE"],
+    "vendor-deal-coach-from-similar-wins":
+        ["CAM", "PDM"],
+    "vendor-qbr-prep":
+        ["PDM", "CAM", "Channel Chief"],
+    "vendor-qbr-recording-to-portal-followup":
+        ["PDM", "CAM", "Channel Ops"],
+    "vendor-slack-weekly-channel-digest":
+        ["Channel Chief", "Channel Ops", "RevOps"],
+    "vendor-anomaly-detector":
+        ["Channel Chief", "RevOps", "PDM"],
+    # Partner
+    "partner-pipeline-influence-companion":
+        ["Partner Seller", "Partner Manager"],
+    "partner-cross-vendor-onboarding-tracker":
+        ["Partner Manager", "Partner Ops", "Partner Seller"],
+    "partner-onboarding-prioritizer":
+        ["Partner Manager", "Partner Ops"],
+    "partner-renewal-and-expansion-coordinator":
+        ["Partner Manager", "Partner Seller", "Customer Success"],
+    "partner-cross-vendor-cert-tracker":
+        ["Partner Enablement", "Partner Ops", "Partner Seller"],
+    "partner-helpdesk":
+        ["Partner Seller", "Partner Ops"],
+    "partner-cross-vendor-content-calendar":
+        ["Partner Marketing", "Partner Manager"],
+    "partner-prospect-to-vendor-fit-finder":
+        ["Partner Seller", "Partner Manager"],
+    "partner-registration-status-tracker":
+        ["Partner Ops", "Partner Manager"],
+    "partner-deal-war-room":
+        ["Partner Seller"],
+    "partner-pre-qbr-self-prep":
+        ["Partner Manager", "Partner Ops"],
+    "partner-incentive-maximizer":
+        ["Partner Seller", "Partner Finance"],
+}
+
 # ---- Skill → use case mapping (mirrors the SKILL_MAP in earlier work) ----
 SKILL_TO_UC = {
     "vendor-acquisition-abm-orchestrator":
         ("01-partner-acquisition", "01", "Partner Acquisition"),
+    "vendor-tier-promotion-batch-review":
+        ("02-partner-segmentation", "02", "Partner Segmentation"),
+    "vendor-crossbeam-cosell-finder":
+        ("02-partner-segmentation", "02", "Partner Segmentation"),
     "vendor-personalized-onboarding-from-transcripts":
+        ("03-onboarding", "03", "Onboarding"),
+    "partner-cross-vendor-onboarding-tracker":
+        ("03-onboarding", "03", "Onboarding"),
+    "partner-onboarding-prioritizer":
         ("03-onboarding", "03", "Onboarding"),
     "vendor-activate-network-with-personalized-campaigns":
         ("04-activation", "04", "Activation"),
+    "partner-renewal-and-expansion-coordinator":
+        ("04-activation", "04", "Activation"),
     "vendor-microcourse-from-closed-lost":
         ("05-training", "05", "Training"),
+    "partner-cross-vendor-cert-tracker":
+        ("05-training", "05", "Training"),
+    "vendor-support-content-gap-detector":
+        ("06-enablement-support", "06", "Enablement Support"),
+    "partner-helpdesk":
+        ("06-enablement-support", "06", "Enablement Support"),
     "vendor-content-radar":
+        ("07-campaigns-and-announcements", "07", "Campaigns & Announcements"),
+    "partner-cross-vendor-content-calendar":
         ("07-campaigns-and-announcements", "07", "Campaigns & Announcements"),
     "vendor-email-deal-registration-watcher":
         ("08-deal-registration", "08", "Deal Registration"),
@@ -35,24 +118,57 @@ SKILL_TO_UC = {
         ("08-deal-registration", "08", "Deal Registration"),
     "partner-pipeline-influence-companion":
         ("08-deal-registration", "08", "Deal Registration"),
+    "partner-prospect-to-vendor-fit-finder":
+        ("08-deal-registration", "08", "Deal Registration"),
+    "partner-registration-status-tracker":
+        ("08-deal-registration", "08", "Deal Registration"),
     "vendor-deal-coach-from-similar-wins":
+        ("11-deal-coaching", "11", "Deal Coaching"),
+    "partner-deal-war-room":
         ("11-deal-coaching", "11", "Deal Coaching"),
     "vendor-qbr-prep":
         ("12-qbrs-meeting-prep", "12", "QBRs / Meeting Prep"),
+    "vendor-qbr-recording-to-portal-followup":
+        ("12-qbrs-meeting-prep", "12", "QBRs / Meeting Prep"),
+    "partner-pre-qbr-self-prep":
+        ("12-qbrs-meeting-prep", "12", "QBRs / Meeting Prep"),
+    "partner-incentive-maximizer":
+        ("13-commissions-and-incentives", "13", "Commissions & Incentives"),
+    "vendor-slack-weekly-channel-digest":
+        ("14-ecosystem-performance", "14", "Ecosystem Performance"),
+    "vendor-anomaly-detector":
+        ("14-ecosystem-performance", "14", "Ecosystem Performance"),
 }
 
 # Display order on the index page — group by use case in numeric order
 INDEX_ORDER = [
     "vendor-acquisition-abm-orchestrator",
+    "vendor-tier-promotion-batch-review",
+    "vendor-crossbeam-cosell-finder",
     "vendor-personalized-onboarding-from-transcripts",
+    "partner-cross-vendor-onboarding-tracker",
+    "partner-onboarding-prioritizer",
     "vendor-activate-network-with-personalized-campaigns",
+    "partner-renewal-and-expansion-coordinator",
     "vendor-microcourse-from-closed-lost",
+    "partner-cross-vendor-cert-tracker",
+    "vendor-support-content-gap-detector",
+    "partner-helpdesk",
     "vendor-content-radar",
+    "partner-cross-vendor-content-calendar",
     "vendor-email-deal-registration-watcher",
     "vendor-pipeline-partner-influence-scout",
     "partner-pipeline-influence-companion",
+    "partner-prospect-to-vendor-fit-finder",
+    "partner-registration-status-tracker",
     "vendor-deal-coach-from-similar-wins",
+    "partner-deal-war-room",
     "vendor-qbr-prep",
+    "vendor-qbr-recording-to-portal-followup",
+    "partner-pre-qbr-self-prep",
+    "partner-incentive-maximizer",
+    "vendor-slack-weekly-channel-digest",
+    "vendor-anomaly-detector",
 ]
 
 
@@ -175,6 +291,20 @@ def build_skill_page(skill_dir: Path):
     description = fm.get("description", "")
     download_path = f"../../.claude/skills/{name}/SKILL.md"
 
+    personas = PERSONA_MAP.get(name, [])
+    persona_html = ""
+    if personas:
+        pills = "".join(
+            f'<span class="persona-badge">{html_lib.escape(p)}</span>'
+            for p in personas
+        )
+        persona_html = (
+            '    <div class="persona-row">\n'
+            '      <span class="persona-row-label">Built for</span>\n'
+            f'      <div class="persona-badges">{pills}</div>\n'
+            '    </div>\n'
+        )
+
     page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -211,7 +341,7 @@ def build_skill_page(skill_dir: Path):
       <code>{html_lib.escape(name)}</code>
     </div>
     <p class="lead">{html_lib.escape(description)}</p>
-  </div>
+{persona_html}  </div>
 </section>
 
 <main class="skill-source-wrap">
@@ -296,24 +426,33 @@ def build_index(all_skills):
             # Truncate description to fit card
             short_desc = description if len(description) <= 260 else description[:257] + "…"
             audience_class = "audience-partner" if audience == "Partner" else "audience-vendor"
+            personas = PERSONA_MAP.get(name, [])
+            persona_pills = "".join(
+                f'<span class="persona-badge">{html_lib.escape(p)}</span>'
+                for p in personas
+            )
+            persona_block = (
+                f'\n          <div class="persona-badges">{persona_pills}</div>'
+                if persona_pills else ""
+            )
             cards.append(f"""        <a class="skill-card" href="./{name}.html">
           <div class="skill-card-top">
             <span class="audience-badge {audience_class}">{audience}</span>
             <code class="skill-card-id">{html_lib.escape(name)}</code>
           </div>
           <h3 class="skill-card-title">{html_lib.escape(all_skills[name]["title"])}</h3>
-          <p class="skill-card-desc">{html_lib.escape(short_desc)}</p>
+          <p class="skill-card-desc">{html_lib.escape(short_desc)}</p>{persona_block}
           <span class="article-card-link">Open skill →</span>
         </a>
 """)
-        grid_class = "two" if len(cards) == 2 else "three" if len(cards) == 3 else ""
+        # Always 2-up on the skill index — odd last card spans full width via CSS.
         sections.append(f"""    <section class="phase">
       <div class="phase-meta">
         <div class="phase-num">Use case {num}</div>
         <h2 class="phase-name">{html_lib.escape(uc_name)}</h2>
         <p class="phase-blurb"><a href="../{slug}.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-tint);">Read the article →</a></p>
       </div>
-      <div class="article-grid skill-grid {grid_class}">
+      <div class="article-grid skill-grid">
 {''.join(cards)}      </div>
     </section>
 """)

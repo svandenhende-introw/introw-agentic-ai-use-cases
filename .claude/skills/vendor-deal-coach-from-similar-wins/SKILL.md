@@ -8,6 +8,17 @@ description: Use when a CAM, PDM, or Channel Account Manager wants to coach a sp
 **Audience**: Vendor — **claude.ai Introw** MCP.
 **Use case**: 11 — Deal Coaching.
 
+## When to use this skill
+
+Use when a CAM, PDM, or Channel Account Manager wants to coach a specific partner deal by first finding similar past won deals (same vertical, deal size, product mix, partner type), extracting the success patterns from those wins, and producing replication coaching for the live deal.
+
+**Sample prompts that fire this skill:**
+- "coach this deal from similar wins"
+- "what worked on similar deals"
+- "replicate past success"
+- "find comparable wins for this deal"
+- "how did we close deals like this before"
+
 ## Why this matters
 AI coaching tools improve win rates by **34% within six months** (Whatfix); structured coaching delivers **32% higher win rates and 28% higher quota attainment** (Korn Ferry); coached reps navigate objections **61% more effectively** (Careertrainer.ai). Partner-sourced deals historically close at lower rates than direct because partner sellers haven't received the structured coaching their direct counterparts get weekly.
 

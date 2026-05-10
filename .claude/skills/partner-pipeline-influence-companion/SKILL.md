@@ -8,6 +8,17 @@ description: Use when a partner user wants to scan accessible vendor pipeline / 
 **Audience**: Partner user — **claude.ai Introw Connect Staging** MCP.
 **Use case**: 08 — Deal Registration (partner-side companion to `vendor-pipeline-partner-influence-scout`).
 
+## When to use this skill
+
+Use when a partner user wants to scan accessible vendor pipeline / shared accounts to identify deals where they have unique influence (existing customer relationship, vertical fit, geographic proximity, prior similar wins) — then surface those deals as candidates to register, share context on, or request to be placed on.
+
+**Sample prompts that fire this skill:**
+- "where can I add value"
+- "which vendor deals fit me"
+- "find deals I should be on"
+- "my partner-influence opportunities"
+- "register the deals I can influence"
+
 ## Why this matters
 Partners typically only register deals they sourced themselves — but a meaningful chunk of vendor-direct or co-sell-eligible pipeline is on accounts where the partner already has earned influence: existing customer relationships, vertical specialization, geographic proximity, prior similar wins. Surfacing those opportunities to the partner self-service multiplies the partner-led-revenue lift (~35%, Computer Market Research) without requiring a vendor-side PDM to spot every opportunity manually.
 
