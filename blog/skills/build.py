@@ -18,66 +18,78 @@ SKILLS_OUT = ROOT / "blog" / "skills"
 LOGO_URL = "https://assets.introw.io/introw-logo-square.png"
 
 # ---- Personas served by each skill ----
-# Vendor (Introw MCP): Channel Chief, RevOps, PDM (Partner Development Manager),
-# CAM (Channel Account Manager), Channel Ops, Partner Enablement, Partner Marketing,
-# Vendor Marketing, Vendor IT, Partner Recruiter, Channel Manager, AE.
-# Partner (Introw Connect): Partner Seller, Partner Manager (of vendor relationships),
-# Partner Ops, Partner Enablement, Partner Marketing, Partner Finance, Customer Success.
+# Standardized to industry-canonical role names. Top 10 channel/partnership roles
+# in the market (vendor-side) — all covered across the skill set:
+#   1. Partner Program Manager             (owns the partner program; aka Channel Chief / Head of Partner Programs)
+#   2. VP Partnerships                     (strategic owner; sometimes ≡ Channel Chief)
+#   3. Partner Development Manager (PDM)   (drives partner growth & activation)
+#   4. Channel Account Manager (CAM)       (manages individual partner relationships)
+#   5. Partner Marketing Manager           (partner-facing marketing)
+#   6. Partner Enablement Manager          (training & certifications)
+#   7. Channel Ops Manager                 (tooling, governance, processes)
+#   8. Channel RevOps                      (analytics, attribution, forecasting)
+#   9. Alliance Manager                    (strategic / ELG / co-sell partnerships)
+#  10. Partner Recruiter                   (sources new partners; aka Partner Acquisition Mgr)
+# Adjacent roles that touch the channel team: Account Executive (direct sales co-sell),
+# Vendor Marketing (corp marketing producing partner-relevant content),
+# Vendor IT (capability-matrix governance for the partner-support agent).
+# Partner-side roles (top 5): Partner Seller, Partnerships Lead (manages vendor relationships
+# at the partner org), Partner Operations, Customer Success Manager, Partner Finance.
 PERSONA_MAP = {
     # Vendor
     "vendor-acquisition-abm-orchestrator":
-        ["Channel Chief", "Partner Recruiter", "RevOps"],
+        ["Partner Program Manager", "VP Partnerships", "Partner Recruiter"],
     "vendor-tier-promotion-batch-review":
-        ["Channel Chief", "RevOps", "PDM"],
+        ["Partner Program Manager", "Channel RevOps", "Partner Development Manager"],
     "vendor-crossbeam-cosell-finder":
-        ["RevOps", "Channel Manager", "PDM"],
+        ["Alliance Manager", "Channel RevOps", "Partner Development Manager"],
     "vendor-personalized-onboarding-from-transcripts":
-        ["CAM", "PDM", "Channel Ops"],
+        ["Channel Account Manager", "Partner Development Manager", "Channel Ops Manager"],
     "vendor-activate-network-with-personalized-campaigns":
-        ["Channel Chief", "PDM", "RevOps"],
+        ["Partner Program Manager", "Partner Development Manager", "Channel RevOps"],
     "vendor-microcourse-from-closed-lost":
-        ["Partner Enablement", "Channel Chief", "RevOps"],
+        ["Partner Enablement Manager", "Partner Program Manager", "Channel RevOps"],
     "vendor-support-content-gap-detector":
-        ["Partner Enablement", "Channel Ops", "Vendor IT"],
+        ["Partner Enablement Manager", "Channel Ops Manager", "Vendor IT"],
     "vendor-content-radar":
-        ["Partner Marketing", "Vendor Marketing"],
+        ["Partner Marketing Manager", "Vendor Marketing"],
     "vendor-email-deal-registration-watcher":
-        ["Channel Ops", "RevOps", "PDM"],
+        ["Channel Ops Manager", "Channel RevOps", "Partner Development Manager"],
     "vendor-pipeline-partner-influence-scout":
-        ["Channel Chief", "RevOps", "AE"],
+        ["Partner Program Manager", "Channel RevOps", "Account Executive"],
     "vendor-deal-coach-from-similar-wins":
-        ["CAM", "PDM"],
+        ["Channel Account Manager", "Partner Development Manager"],
     "vendor-qbr-prep":
-        ["PDM", "CAM", "Channel Chief"],
+        ["Partner Development Manager", "Channel Account Manager", "Partner Program Manager"],
     "vendor-qbr-recording-to-portal-followup":
-        ["PDM", "CAM", "Channel Ops"],
+        ["Partner Development Manager", "Channel Account Manager", "Channel Ops Manager"],
     "vendor-slack-weekly-channel-digest":
-        ["Channel Chief", "Channel Ops", "RevOps"],
+        ["Partner Program Manager", "Channel Ops Manager", "Channel RevOps"],
     "vendor-anomaly-detector":
-        ["Channel Chief", "RevOps", "PDM"],
-    # Partner
+        ["Partner Program Manager", "Channel RevOps", "Partner Development Manager"],
+    # Partner-side
     "partner-pipeline-influence-companion":
-        ["Partner Seller", "Partner Manager"],
+        ["Partner Seller", "Partnerships Lead"],
     "partner-cross-vendor-onboarding-tracker":
-        ["Partner Manager", "Partner Ops", "Partner Seller"],
+        ["Partnerships Lead", "Partner Operations", "Partner Seller"],
     "partner-onboarding-prioritizer":
-        ["Partner Manager", "Partner Ops"],
+        ["Partnerships Lead", "Partner Operations"],
     "partner-renewal-and-expansion-coordinator":
-        ["Partner Manager", "Partner Seller", "Customer Success"],
+        ["Partnerships Lead", "Partner Seller", "Customer Success Manager"],
     "partner-cross-vendor-cert-tracker":
-        ["Partner Enablement", "Partner Ops", "Partner Seller"],
+        ["Partner Enablement", "Partner Operations", "Partner Seller"],
     "partner-helpdesk":
-        ["Partner Seller", "Partner Ops"],
+        ["Partner Seller", "Partner Operations"],
     "partner-cross-vendor-content-calendar":
-        ["Partner Marketing", "Partner Manager"],
+        ["Partner Marketing", "Partnerships Lead"],
     "partner-prospect-to-vendor-fit-finder":
-        ["Partner Seller", "Partner Manager"],
+        ["Partner Seller", "Partnerships Lead"],
     "partner-registration-status-tracker":
-        ["Partner Ops", "Partner Manager"],
+        ["Partner Operations", "Partnerships Lead"],
     "partner-deal-war-room":
         ["Partner Seller"],
     "partner-pre-qbr-self-prep":
-        ["Partner Manager", "Partner Ops"],
+        ["Partnerships Lead", "Partner Operations"],
     "partner-incentive-maximizer":
         ["Partner Seller", "Partner Finance"],
 }
@@ -190,6 +202,8 @@ def parse_skill(path: Path):
     body_stripped = body.lstrip()
     h1 = re.match(r'^# (.+)$', body_stripped, re.MULTILINE)
     title = h1.group(1).strip() if h1 else fm.get("name", "Skill")
+    # Strip trailing "(Vendor)" / "(Partner)" suffix — audience is shown via the pill, not in the title
+    title = re.sub(r'\s*\((?:Vendor|Partner)\)\s*$', '', title).strip()
     return fm, title, body
 
 
@@ -282,11 +296,12 @@ def build_skill_page(skill_dir: Path):
     word_count = len(re.findall(r"\w+", raw_md))
 
     audience = "Partner" if name.startswith("partner-") else "Vendor"
+    audience_class = "audience-partner" if audience == "Partner" else "audience-vendor"
     uc = SKILL_TO_UC.get(name)
     uc_link = ""
     if uc:
         slug, num, uc_name = uc
-        uc_link = f' · <a href="../{slug}.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-tint);">Use case {num}: {html_lib.escape(uc_name)}</a>'
+        uc_link = f' <span class="dot"></span> <a href="../{slug}.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-tint);">Use case {num}: {html_lib.escape(uc_name)}</a>'
 
     description = fm.get("description", "")
     download_path = f"../../.claude/skills/{name}/SKILL.md"
@@ -333,7 +348,7 @@ def build_skill_page(skill_dir: Path):
     <div class="article-hero-eyebrow">
       <span class="uc-num">Claude Code skill</span>
       <span class="dot"></span>
-      <span>{audience}{uc_link}</span>
+      <span class="audience-badge {audience_class}">{audience}</span>{uc_link}
     </div>
     <h1>{html_lib.escape(title)}</h1>
     <div class="skill-id">
@@ -486,11 +501,6 @@ def build_index(all_skills):
     </div>
     <h1>Drop-in <em>workflows</em> that run inside Claude Code.</h1>
     <p class="lead">Each skill is a <code>SKILL.md</code> file with structured trigger phrases, MCP tool calls, and PRM guardrails. Drop into <code>.claude/skills/&lt;name&gt;/</code> in your repo and Claude Code triggers the right one when the prompt matches.</p>
-    <div class="blog-hero-stats">
-      <div class="blog-hero-stat"><strong>{total_skills}</strong> skills</div>
-      <div class="blog-hero-stat"><strong>9</strong> use cases covered</div>
-      <div class="blog-hero-stat"><strong>2</strong> audiences (vendor &amp; partner)</div>
-    </div>
   </div>
 </section>
 
