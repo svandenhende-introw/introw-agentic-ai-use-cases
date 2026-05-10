@@ -545,29 +545,104 @@ nav.primary-nav a:hover { color: var(--ink); }
 .article-body li { margin: 6px 0; }
 .article-body li > ul, .article-body li > ol { margin-top: 6px; margin-bottom: 6px; }
 
-/* Blockquote = key takeaways / pull quote */
+/* Generic blockquote (pull quote / quoted text) */
 .article-body blockquote {
   margin: 28px 0;
-  padding: 22px 26px;
-  background: var(--accent-soft);
-  border-left: 4px solid var(--accent);
-  border-radius: 4px 12px 12px 4px;
+  padding: 18px 24px;
+  border-left: 3px solid var(--line-strong);
   color: var(--ink-soft);
+  font-style: italic;
   font-size: 16px;
   line-height: 1.65;
 }
 .article-body blockquote > :first-child { margin-top: 0; }
 .article-body blockquote > :last-child { margin-bottom: 0; }
-.article-body blockquote ul { padding-left: 20px; }
-.article-body blockquote li { margin: 8px 0; }
-.article-body blockquote strong { color: var(--ink); }
+.article-body blockquote strong { color: var(--ink); font-style: normal; }
 
 /* "Pro tip" callout style (from > **Pro tip:**) */
 .article-body blockquote.protip {
+  font-style: normal;
   background: var(--warn-soft);
-  border-left-color: var(--warn);
+  border-left: 3px solid var(--warn);
+  border-radius: 4px 12px 12px 4px;
+  padding: 18px 24px;
 }
 .article-body blockquote.protip strong { color: var(--warn-deep); }
+
+/* ============================================================
+   KEY TAKEAWAYS — editorial summary card
+   ============================================================ */
+.key-takeaways {
+  margin: 0 0 44px;
+  padding: 26px 30px 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.key-takeaways::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--accent);
+}
+.key-takeaways-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.key-takeaways-eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--accent);
+}
+.article-body .key-takeaways ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.article-body .key-takeaways li {
+  position: relative;
+  padding: 0 0 0 22px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.article-body .key-takeaways li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 12px;
+  height: 2px;
+  background: var(--accent-tint);
+  border-radius: 2px;
+}
+.article-body .key-takeaways li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.article-body .key-takeaways a {
+  color: var(--accent);
+  border-bottom-color: var(--accent-tint);
+}
+@media (max-width: 600px) {
+  .key-takeaways { padding: 22px 22px 24px; }
+}
 
 /* Code */
 .article-body code {
