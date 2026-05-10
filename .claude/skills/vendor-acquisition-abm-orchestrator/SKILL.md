@@ -5,7 +5,7 @@ description: End-to-end agentic partner acquisition. Use when a Channel Chief, V
 
 # Strategic Partner Acquisition: ABM Orchestrator (Vendor)
 
-**Audience**: Vendor — **claude.ai Introw** MCP + **optional claude.ai Crossbeam** MCP (+ optional Clay / LinkedIn Sales Navigator / ABM-platform MCPs if installed).
+**Audience**: Vendor — **claude.ai Introw** MCP + **optional claude.ai Crossbeam** MCP (+ optional Clay / ABM-platform MCPs if installed).
 **Use case**: 01 — Partner Acquisition.
 
 ## When to use this skill
@@ -87,7 +87,7 @@ Cross-check the lookalike signature and current footprint against goals:
 - The output of this step is a **ranked acquisition brief**, not a generic prospecting list.
 
 ### Step 4 — Source net-new targets
-- If a Clay / LinkedIn Sales Navigator / ABM-platform MCP is installed, use it to source firmographically-matched candidates against the lookalike signature + gap brief.
+- If a Clay / ABM-platform MCP is installed, use it to source firmographically-matched candidates against the lookalike signature + gap brief.
 - If not, output a **directly-pasteable acquisition brief** (firmographic filters + intent signals) for the recruiter to feed into their tool of choice.
 
 ### Step 5 — Identify key stakeholders at target accounts
