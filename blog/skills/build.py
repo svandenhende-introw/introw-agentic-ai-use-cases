@@ -308,7 +308,6 @@ def build_skill_page(skill_dir: Path):
         uc_link = f' <span class="dot"></span> <a href="../{slug}.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-tint);">Use case {num}: {html_lib.escape(uc_name)}</a>'
 
     description = fm.get("description", "")
-    download_path = f"../../.claude/skills/{name}/SKILL.md"
 
     personas = PERSONA_MAP.get(name, [])
     persona_html = ""
@@ -385,10 +384,10 @@ def build_skill_page(skill_dir: Path):
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           <span>Copy</span>
         </button>
-        <a class="skill-source-btn skill-source-download" href="{download_path}" download="{name}.md">
+        <button type="button" class="skill-source-btn skill-source-download" data-target="skill-md-{name}" data-filename="{name}.md">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download SKILL.md</span>
-        </a>
+        </button>
       </div>
     </div>
     <pre class="skill-source-pre"><code id="skill-md-{name}">{md_escaped}</code></pre>
@@ -400,8 +399,8 @@ def build_skill_page(skill_dir: Path):
 
 <script>
   (function() {{
-    var btns = document.querySelectorAll('.skill-source-copy');
-    btns.forEach(function(btn) {{
+    // Copy button — copies the embedded markdown to clipboard
+    document.querySelectorAll('.skill-source-copy').forEach(function(btn) {{
       btn.addEventListener('click', function() {{
         var target = document.getElementById(btn.dataset.target);
         if (!target) return;
@@ -416,6 +415,26 @@ def build_skill_page(skill_dir: Path):
             btn.classList.remove('copied');
           }}, 1600);
         }});
+      }});
+    }});
+
+    // Download button — generates a Blob from the embedded markdown and triggers download.
+    // This avoids serving the file from the .claude/ path, which many static hosts block.
+    document.querySelectorAll('.skill-source-download').forEach(function(btn) {{
+      btn.addEventListener('click', function() {{
+        var target = document.getElementById(btn.dataset.target);
+        if (!target) return;
+        var text = target.innerText;
+        var filename = btn.dataset.filename || 'SKILL.md';
+        var blob = new Blob([text], {{ type: 'text/markdown;charset=utf-8' }});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function() {{ URL.revokeObjectURL(url); }}, 0);
       }});
     }});
   }})();
